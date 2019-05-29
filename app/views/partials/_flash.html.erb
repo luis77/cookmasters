@@ -1,0 +1,13 @@
+<!--flash messages-->
+  <% flash.each do |key, msg| %>
+      <div align="center" id="flash" class="alert alert-<%= key %>">
+        <a href="#" data-dismiss="alert" class="close">×</a>
+        <ul style="text-align: center">
+          <l>
+          <b> <%= msg %>  </b>
+          </l>
+        </ul>
+      </div>
+  <% end %>
+
+  <!--flash messages-->
