@@ -7,7 +7,7 @@
     <div class="row no-gutters">
 
       <div class="col-xl-12 who-left-w3pvt d-flex">
-        <div class="w3layouts-bgs align-self-center mt-xl-5">
+        <div class="w3layouts-bgs align-self-center mt-xl-5" style="margin-left: 34%;">
           <div class="d-flex services-box mt-5">
 
             
@@ -15,32 +15,77 @@
           <div class="d-flex services-box mt-5">
 
 
-            <h2>Log in</h2>
 
-            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-              <div class="field">
-                <%= f.label :email %><br />
-                <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-              </div>
 
-              <div class="field">
-                <%= f.label :password %><br />
-                <%= f.password_field :password, autocomplete: "current-password" %>
-              </div>
 
-              <% if devise_mapping.rememberable? %>
-                <div class="field">
-                  <%= f.check_box :remember_me %>
-                  <%= f.label :remember_me %>
+
+
+
+
+
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-horizontal"}) do |f| %>
+      <div id="wrapper">
+        <div id="login" class="animate form">
+          <section class="login_content">
+              <h1>Acceso</h1>
+
+              <div class="forml">
+
+                <div class="form-group">
+                  <div>
+                    <%= f.text_field :email, autofocus: true, :class => "form-control", :placeholder =>"Email o nombre de usuario",  :required => ""  %>
+                  </div>
                 </div>
-              <% end %>
 
-              <div class="actions">
-                <%= f.submit "Log in" %>
+                <div class="form-group">
+                  <div>
+                    <%= f.password_field :password, autofocus: true, :class => "form-control", :placeholder =>"Password",  :required => ""  %>
+                  </div>
+                  
+                </div>
+
               </div>
-            <% end %>
+              <div class="form-group">
+                  <% if devise_mapping.rememberable? -%>
+                      <div class="checkbox-inline col-md-5">
+                        <%= f.check_box :remember_me %>
+                        <%= f.label :remember_me %>
+                      </div>
+                  <% end -%>
+              </div>
+                <%= f.submit "Entrar", :class => "btn btn-default submit col-md-12"%>
+
+          </section>
+              
+                  </div>
+                  </div>
 
             <%= render "devise/shared/links" %>
+    <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
             
@@ -57,16 +102,9 @@
 <div class="row no-gutters" id="testi">
       <div class="col-xl-6 who-left-w3pvt-2 d-flex">
         <div class="w3layouts-bgs-2 align-self-center mb-xl-5 pb-xl-5">
-          <h6 class="text-colors let-spa">Testimonials</h6>
-          <h3 class="title-w3ls-2 mt-1 mb-xl-5 mb-4">Reviews of the Customers</h3>
-          <p class="mb-4 sub-para-wthree">Duis aute irure dolor in reprehenderit cillum dolore eu fugiat
-            nulla
-            pariatur.</p>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-            doloremque laudantium,
-            totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
-            vitae
-            dicta sunt explicabo.</p>
+          <h3 class="title-w3ls-2 mt-1 mb-xl-5 mb-4">Registrate de forma gratuita</h3>
+          <p class="mb-4 sub-para-wthree">Registrate en nuestra web para que puedas comprartir recetas</p>
+          <p>Podrás darte a conocer mediante ellas, formando parte de los mejores chefs, otros usuarios podrán aprender de ellas y mantener la comunidad activa.</p>
 
         </div>
       </div>
