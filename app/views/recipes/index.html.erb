@@ -1,31 +1,189 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Recipes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Body</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @recipes.each do |recipe| %>
-      <tr>
-        <td><%= recipe.name %></td>
-        <td><%= recipe.body %></td>
-        <td><%= recipe.user %></td>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
 <%= link_to 'New Recipe', new_recipe_path %>
+
+<div class="text-center">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mi_nueva_receta">
+    Nueva receta
+  </button>
+</div>
+
+
+<!-- Modal -->
+<%= form_for(@recipe, remote: true, html: {class: "form-horizontal"}) do |f| %> <!--ajax remote: true-->
+<div class="modal fade bd-example-modal-lg" id="mi_nueva_receta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Mi nueva receta</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="form-group">
+          <div class="col-md-8">
+           Nombre: <%= f.text_field :name, class: "form-control",autofocus: true, minlength: "1"  %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-12">
+            <button type="button" class="btn btn-success btn-xs" onclick="miIngrediente()">
+             Añadir ingrediente
+            </button>
+          </div>
+        </div>
+
+        <%= fields_for :lista do |ff|%>
+         <div id="ingredientes" class="form-group">
+
+
+
+
+
+
+
+            
+            <div class="form-group">
+              <%= f.label :Clave, "Clave:", class: "control-label col-md-2"  %>
+              <div class="col-md-4">
+                  <input type="text" id="ingrediente_1" value="" name="lista[ingrediente_1]" class="ingredientes" placeholder="ingrediente 1" />
+              </div>
+
+              <%= f.label :Descripcion, "Descripción:", class: "control-label col-md-2"  %>
+              <div class="col-md-4">
+                  <input type="text" id="ingrediente_1" value="" name="lista[ingrediente_1]" class="ingredientes" placeholder="ingrediente 1" />
+              </div>
+            </div>
+
+
+
+
+
+
+
+         </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= f.label :body, "Descripción:", class: "control-label col-md-2"  %>
+          <div class="col-md-12">
+            <%= f.text_area :body, class: "form-control",style:"height: 200px;" %>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <%= submit_tag "Crear", class: "btn btn-primary", data: { disable_with: 'Creando' }%>
+      </div>
+    </div>
+  </div>
+</div>
+<%end%>
+
+
+  <section class="blog py-5" id="blog">
+    <div class="container py-xl-5 py-lg-3">
+      <h3 class="title-w3ls text-center text-bl mb-5">Mis recetas</h3>
+      <div class="row">
+        <!-- blog grid -->
+
+        <% @recipes.each do |recipe| %>
+            <div class="col-lg-4 col-md-6 px-md-2">
+              <div class="card">
+                <div class="card-header p-0 position-relative">
+                  <a href="#">
+                    <%= image_tag("blog1.jpg", :alt => "Card image cap", class: "card-img-bottom") %>
+                    <span class="fa fa-book post-icon"></span>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h6 class="let-spa mb-3"><%= recipe.try(:created_at).strftime("%d-%m-%Y") %></h6>
+                  <h5 class="blog-title card-title">
+                    <a href="#"><%= recipe.name %></a>
+                  </h5>
+                  <div class="row mt-5">
+                    <div class="col-3 testi-img-res px-2">
+                      <%= image_tag("te1.jpg", :alt => "", class: "img-fluid rounded-circle") %>
+                    </div>
+                    <div class="col-9 w3_testi_grid mt-xl-2 mt-lg-0 mt-md-2 mt-4">
+                      <h5 class="mb-1"><%= recipe.user.try(:name)%> <%= recipe.user.try(:last_name)%></h5>
+                      <p>Sed do eiusmod</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        <% end %>
+
+        <!-- //blog grid -->
+        <!-- blog grid -->
+        <div class="col-lg-4 col-md-6 px-md-2 mt-md-0 mt-5">
+          <div class="card">
+            <div class="card-header p-0 position-relative">
+              <a href="#">
+                <%= image_tag("blog2.jpg", :alt => "Card image cap", class: "card-img-bottom") %>
+                <span class="fa fa-book post-icon"></span>
+              </a>
+            </div>
+            <div class="card-body">
+              <h6 class="let-spa mb-3">22 April 2019</h6>
+              <h5 class="blog-title card-title">
+                <a href="#">At vero eos et accusam et
+                  justo duo dolores et ea rebum</a>
+              </h5>
+              <div class="row mt-5">
+                <div class="col-3 testi-img-res px-2">
+                  <%= image_tag("te2.jpg", :alt => "", class: "img-fluid rounded-circle") %>
+                </div>
+                <div class="col-9 w3_testi_grid mt-xl-2 mt-lg-0 mt-md-2 mt-4">
+                  <h5 class="mb-1">Anna Mull</h5>
+                  <p>Sed do eiusmod</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //blog grid -->
+        <!-- blog grid -->
+        <div class="col-lg-4 col-md-6 px-md-2 mt-lg-0 mt-5">
+          <div class="card">
+            <div class="card-header p-0 position-relative">
+              <a href="#">
+                <%= image_tag("blog3.jpg", :alt => "Card image cap", class: "card-img-bottom") %>
+                <span class="fa fa-book post-icon"></span>
+              </a>
+            </div>
+            <div class="card-body">
+              <h6 class="let-spa mb-3">24 April 2019</h6>
+              <h5 class="blog-title card-title">
+                <a href="#">At vero eos et accusam et
+                  justo duo dolores et ea rebum</a>
+              </h5>
+              <div class="row mt-5">
+                <div class="col-3 testi-img-res px-2">
+                  <%= image_tag("te3.jpg", :alt => "", class: "img-fluid rounded-circle") %>
+                </div>
+                <div class="col-9 w3_testi_grid mt-xl-2 mt-lg-0 mt-md-2 mt-4">
+                  <h5 class="mb-1">Petey Cruiser</h5>
+                  <p>Sed do eiusmod</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //blog grid -->
+      </div>
+    </div>
+  </section>
+
+
+
+    <script>
+      function miIngrediente() {
+        document.getElementById('ingredientes').innerHTML+='<div class="col-md-5"><input type="text" id="ingrediente_1" value="" name="lista[ingrediente_1]" class="ingredientes" placeholder="ingrediente 1" /></div>';
+      }
+    </script>

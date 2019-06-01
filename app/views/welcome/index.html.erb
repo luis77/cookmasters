@@ -1,92 +1,4 @@
-	<!-- header -->
-	<header id="home">
-
-	<!-- header 2 -->
-	<!-- navigation -->
-	<div class="main-top" style="background-color: #fff7f5ed;">
-		<div class="container d-lg-flex justify-content-between align-items-center">
-			<!-- logo -->
-			<h1 class="logo-style-res float-left">
-				<a class="navbar-brand" href="index.html">
-				<%= image_tag("logo.png", :alt => "logo", class: "img-fluid logo-img mt-1",style:"width: 50px;") %> CookMasters
-				</a>
-			</h1>
-			<!-- //logo -->
-			<!-- nav -->
-			<div class="nav_w3ls mx-lg-auto">
-				<nav>
-					<label for="drop" class="toggle">Menu</label>
-					<input type="checkbox" id="drop" />
-					<ul class="menu mx-lg-auto">
-						<li><a href="index.html" class="active">Home</a></li>
-						<li><a href="#about">About Us</a></li>
-						<li>
-							<!-- First Tier Drop Down -->
-							<label for="drop-2" class="toggle toogle-2">Pages <span class="fa fa-angle-down"
-									aria-hidden="true"></span>
-							</label>
-							<a href="#">Pages <span class="fa fa-angle-down" aria-hidden="true"></span></a>
-							<input type="checkbox" id="drop-2" />
-							<ul>
-								<li><a href="#chefs" class="drop-text">Our Chef's</a></li>
-								<li><a href="#blog" class="drop-text">Blog Posts</a></li>
-								<li><a href="#services" class="drop-text">Services</a></li>
-								<li><a href="#what" class="drop-text">Achievements</a></li>
-								<li><a href="#testi" class="drop-text">Reviews</a></li>
-								<li><a href="#subscribe" class="drop-text">Subscribe</a></li>
-							</ul>
-						</li>
-						<li><a href="#gallery">Gallery</a></li>
-
-						<% if user_signed_in? %>
-							<li><%= link_to '<i class="fa fa-sign-out pull-right"></i> Cerrar sesión'.html_safe, destroy_user_session_path, method: :delete%></li>
-    					<%else%>
-							<li><%= link_to '<i class="fa fa-sign-out pull-right"></i> Iniciar sesión'.html_safe, new_user_session_path%></li>
-    					<%end%>
-					</ul>
-				</nav>
-			</div>
-			<!-- //nav -->
-		</div>
-	</div>
-	<!-- //navigation -->
-	<!-- //header 2 -->
-
-	<!-- banner slider -->
-	<div id="homepage-slider" class="st-slider">
-		<input type="radio" class="cs_anchor radio" name="slider" id="play1" checked="" />
-		<input type="radio" class="cs_anchor radio" name="slider" id="slide1" />
-		<input type="radio" class="cs_anchor radio" name="slider" id="slide2" />
-		<input type="radio" class="cs_anchor radio" name="slider" id="slide3" />
-		<div class="images">
-			<div class="images-inner">
-				<div class="image-slide">
-					<div class="banner-w3ls-1">
-
-					</div>
-				</div>
-				<div class="image-slide">
-					<div class="banner-w3ls-2">
-
-					</div>
-				</div>
-				<div class="image-slide">
-					<div class="banner-w3ls-3">
-
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="labels">
-			<div class="fake-radio">
-				<label for="slide1" class="radio-btn"></label>
-				<label for="slide2" class="radio-btn"></label>
-				<label for="slide3" class="radio-btn"></label>
-			</div>
-		</div>
-	</div>
-	<!-- //banner slider -->
-
+    <%= render :partial => 'partials/slider' %>
 	<!-- banner bottom grids -->
 	<section class="banner-bottom-w3layouts pb-5" id="services">
 		<div class="container">
@@ -127,33 +39,94 @@
 	<!-- //banner bottom grids -->
 
 	<!-- about -->
-	<section class="w3ls-bnrbtm py-5" id="about">
+	<section class="blog py-5" id="blog">
 		<div class="container py-xl-5 py-lg-3">
-			<div class="row pb-5">
-				<div class="col-lg-6">
-					<%= image_tag("ab.jpg", :alt => "", class: "img-fluid") %>
+			<h3 class="title-w3ls text-center text-bl mb-5">Nuestras mejores recetas</h3>
+			<div class="row">
+				<!-- blog grid -->
+				<div class="col-lg-4 col-md-6 px-md-2">
+					<div class="card">
+						<div class="card-header p-0 position-relative">
+							<a href="#">
+								<%= image_tag("blog1.jpg", :alt => "Card image cap", class: "card-img-bottom") %>
+								<span class="fa fa-user post-icon"></span>
+							</a>
+						</div>
+						<div class="card-body">
+							<h6 class="let-spa mb-3">20 April 2019</h6>
+							<h5 class="blog-title card-title">
+								<a href="#">At vero eos et accusam et
+									justo duo dolores et ea rebum</a>
+							</h5>
+							<div class="row mt-5">
+								<div class="col-3 testi-img-res px-2">
+									<%= image_tag("te1.jpg", :alt => "", class: "img-fluid rounded-circle") %>
+								</div>
+								<div class="col-9 w3_testi_grid mt-xl-2 mt-lg-0 mt-md-2 mt-4">
+									<h5 class="mb-1">Adam Ster</h5>
+									<p>Sed do eiusmod</p>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="col-lg-6 pl-lg-5 abou-right-w3layuts mt-lg-0 mt-5">
-					<h3 class="mb-4">Welcome to Our Baking <br>Website</h3>
-					<p>Donec consequat sapien ut leo cursus rhoncus. Nullam dui mi, vulputate ac metus
-						at, semper
-						varius orci. </p>
-					<p>Nulla accumsan ac elit in congue. Class aptent taciti sociosqu ad litora torquent
-						per conubia.</p>
+				<!-- //blog grid -->
+				<!-- blog grid -->
+				<div class="col-lg-4 col-md-6 px-md-2 mt-md-0 mt-5">
+					<div class="card">
+						<div class="card-header p-0 position-relative">
+							<a href="#">
+								<%= image_tag("blog2.jpg", :alt => "Card image cap", class: "card-img-bottom") %>
+								<span class="fa fa-user post-icon"></span>
+							</a>
+						</div>
+						<div class="card-body">
+							<h6 class="let-spa mb-3">22 April 2019</h6>
+							<h5 class="blog-title card-title">
+								<a href="#">At vero eos et accusam et
+									justo duo dolores et ea rebum</a>
+							</h5>
+							<div class="row mt-5">
+								<div class="col-3 testi-img-res px-2">
+									<%= image_tag("te2.jpg", :alt => "", class: "img-fluid rounded-circle") %>
+								</div>
+								<div class="col-9 w3_testi_grid mt-xl-2 mt-lg-0 mt-md-2 mt-4">
+									<h5 class="mb-1">Anna Mull</h5>
+									<p>Sed do eiusmod</p>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class="row flex-row-reverse border-top pt-lg-5 pt-sm-4 pt-2 mt-lg-5 mt-sm-4 mt-2">
-				<div class="col-lg-6">
-					<%= image_tag("ab2.jpg", :alt => "", class: "img-fluid") %>
+				<!-- //blog grid -->
+				<!-- blog grid -->
+				<div class="col-lg-4 col-md-6 px-md-2 mt-lg-0 mt-5">
+					<div class="card">
+						<div class="card-header p-0 position-relative">
+							<a href="#">
+								<%= image_tag("blog3.jpg", :alt => "Card image cap", class: "card-img-bottom") %>
+								<span class="fa fa-user post-icon"></span>
+							</a>
+						</div>
+						<div class="card-body">
+							<h6 class="let-spa mb-3">24 April 2019</h6>
+							<h5 class="blog-title card-title">
+								<a href="#">At vero eos et accusam et
+									justo duo dolores et ea rebum</a>
+							</h5>
+							<div class="row mt-5">
+								<div class="col-3 testi-img-res px-2">
+									<%= image_tag("te3.jpg", :alt => "", class: "img-fluid rounded-circle") %>
+								</div>
+								<div class="col-9 w3_testi_grid mt-xl-2 mt-lg-0 mt-md-2 mt-4">
+									<h5 class="mb-1">Petey Cruiser</h5>
+									<p>Sed do eiusmod</p>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="col-lg-6 abou-right-w3layuts mt-5">
-					<h3 class="mb-4">Title text goes here in one or <br>two lines</h3>
-					<p>Donec consequat sapien ut leo cursus rhoncus. Nullam dui mi, vulputate ac metus
-						at, semper
-						varius orci. </p>
-					<p>Nulla accumsan ac elit in congue. Class aptent taciti sociosqu ad litora torquent
-						per conubia.</p>
-				</div>
+				<!-- //blog grid -->
 			</div>
 		</div>
 	</section>
@@ -223,7 +196,7 @@
 	<!-- blog -->
 	<section class="blog py-5" id="blog">
 		<div class="container py-xl-5 py-lg-3">
-			<h3 class="title-w3ls text-center text-bl mb-5">Our Fresh Blog Posts</h3>
+			<h3 class="title-w3ls text-center text-bl mb-5">Todas nuestras recetas</h3>
 			<div class="row">
 				<!-- blog grid -->
 				<div class="col-lg-4 col-md-6 px-md-2">
@@ -313,85 +286,3 @@
 		</div>
 	</section>
 	<!-- //blog -->
-
-	
-
-	<!-- footer -->
-	<footer>
-		<div class="container">
-			<div class="py-5">
-				<div class="row footer-grids pt-lg-3 pb-4">
-					<div class="col-lg-4 footer-grid">
-						<div class="footer-logo">
-							<h2>
-								<a class="logo mt-md-5 mt-1" href="index.html">Baking</a>
-							</h2>
-						</div>
-					</div>
-					<div class="col-lg-2 col-6 footer-grid mt-5">
-						<h3 class="mb-sm-4 mb-3 pb-3">Home</h3>
-						<ul class="list-unstyled">
-							<li>
-								<a href="index.html">Index</a>
-							</li>
-							<li>
-								<a href="#about">About Us</a>
-							</li>
-							<li>
-								<a href="#what">What We Do</a>
-							</li>
-							<li>
-								<a href="#gallery">Gallery</a>
-							</li>
-							<li>
-								<a href="#contact">Contact Us</a>
-							</li>
-						</ul>
-					</div>
-					<div class="col-lg-2 col-6 footer-grid mt-5">
-						<h3 class="mb-sm-4 mb-3 pb-3"> Navigation </h3>
-						<ul class="list-unstyled">
-							<li>
-								<a href="#what">Achievements</a>
-							</li>
-							<li>
-								<a href="#services">Services</a>
-							</li>
-							<li>
-								<a href="#testi">Reviews</a>
-							</li>
-							<li>
-								<a href="#blog">Blog</a>
-							</li>
-						</ul>
-					</div>
-					<div class="col-lg-2 col-6 footer-grid mt-5">
-						<h3 class="mb-sm-4 mb-3 pb-3"> Company</h3>
-						<ul class="list-unstyled">
-							<li>
-								<a href="#">Link Here</a>
-							</li>
-							<li>
-								<a href="#">Link Here</a>
-							</li>
-							<li>
-								<a href="#">Link Here</a>
-							</li>
-						</ul>
-					</div>
-					<div class="col-lg-2 col-6 footer-grid mt-5">
-						<h3 class="mb-sm-4 mb-3 pb-3">Contact Us</h3>
-						<ul class="list-unstyled">
-							<li>
-								+01(24) 8543 8088
-							</li>
-							<li>
-								<a href="mailto:info@example.com">info@example.com</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- //footer -->
