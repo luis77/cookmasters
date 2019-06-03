@@ -1,0 +1,21 @@
+<% if @puede_editar == true %>
+  $("#myupdatecliente").modal('hide');
+
+  $("#cliente_<%= @cliente.id %>").fadeOut(500, function(){
+    $(this).remove();
+    $(".child").remove();
+    $("#container_clientes").prepend('<%= j render @cliente %>');
+
+  });
+<%end%>
+if($("#actualizar_correo")){
+	$("#actualizar_correo").modal('hide');
+	$($("form#search").get(1)).find("input[type='submit']").trigger('click');
+}
+$("#notice").html("<%= escape_javascript(render :partial => 'partials/flash' , :locals => { :flash => flash }).html_safe %>");
+
+setTimeout(function(){
+  $('#notice').fadeIn("slow", function() {
+    $(this).create();
+  })
+}, 1500);

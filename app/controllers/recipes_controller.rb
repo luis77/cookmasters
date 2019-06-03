@@ -30,11 +30,16 @@ class RecipesController < ApplicationController
 
     respond_to do |format|
       if @recipe.save
+        params[:lista].each do |(c,ingrediente)|
+          Ingredient.create(name: ingrediente, recipe_id:@recipe.id)
+        end
         format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
         format.json { render :show, status: :created, location: @recipe }
+        format.js {flash.now[:notice] = 'La receta se ha creado de forma exitosa.'} #ajax
       else
         format.html { render :new }
         format.json { render json: @recipe.errors, status: :unprocessable_entity }
+        format.js {flash.now[:alert] = 'Error al crear la receta.'} #ajax
       end
     end
   end
