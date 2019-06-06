@@ -1,49 +1,94 @@
-<h2>Sign up</h2>
+<section class="w3ls-bnrbtm py-12" id="what">
+    <div class="row no-gutters">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="col-xl-12 who-left-w3pvt d-flex">
+        <div class="w3layouts-bgs align-self-center mt-xl-5" style="margin-left: 34%;">
+          <div class="d-flex services-box mt-5">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            
+          </div>
+          <div class="d-flex services-box mt-5">
+
+           <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-horizontal"}) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
+
+              <div id="wrapper">
+                <div id="login" class="animate form">
+                  <section class="login_content">
+                      <h1>Registro</h1>
+                      <div class="forml">
+                        
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputEmail4">Nombre</label>
+                            <%= f.text_field :name, autofocus: true, :class => "form-control", :placeholder =>"nombre",  :required => ""  %>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="inputPassword4">Apellido</label>
+                            <%= f.text_field :last_name, :class => "form-control", :placeholder =>"Apellido",  :required => ""  %>
+                          </div>
+                        </div>
+
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputEmail4">password</label>
+                            <% if @minimum_password_length %>
+                            <em>(<%= @minimum_password_length %> caracteres minimo)</em>
+                            <% end %><br />
+                            <%= f.password_field :password, :class => "form-control", :placeholder =>"password", autocomplete: "new-password" %>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="inputPassword4">password_confirmation</label>
+                            <%= f.password_field :password_confirmation, :class => "form-control", :placeholder =>"password_confirmation", autocomplete: "new-password" %>
+                          </div>
+                        </div>
+
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputEmail4">email</label>
+                            <%= f.email_field :email, :class => "form-control", :placeholder =>"email", autocomplete: "email"  %>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="inputPassword4">username</label>
+                            <%= f.text_field :username, :class => "form-control", :placeholder =>"username",  :required => ""  %>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="inputAddress2">bio</label>
+                          <%= f.text_area :bio, :class => "form-control", :placeholder =>"bio",  :required => ""  %>
+                        </div>
+                        
+                      </div>
+
+                        <%= f.submit "registrarse", :class => "btn btn-default submit col-md-12"%>
+                  </section>
+                </div>
+              </div>
+              <%= render "devise/shared/links" %>
+            <% end %>
+          </div>
+          <div class="d-flex services-box mt-5">
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <div class="row no-gutters" id="testi">
+    <div class="col-xl-6 who-left-w3pvt-2 d-flex">
+      <div class="w3layouts-bgs-2 align-self-center mb-xl-5 pb-xl-5">
+        <h3 class="title-w3ls-2 mt-1 mb-xl-5 mb-4">Registrate de forma gratuita</h3>
+        <p class="mb-4 sub-para-wthree">Registrate en nuestra web para que puedas comprartir recetas</p>
+        <p>Podrás darte a conocer mediante ellas, formando parte de los mejores chefs, otros usuarios podrán aprender de ellas y mantener la comunidad activa.</p>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username%>
-  </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
 
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
 
-  <div class="field">
-    <%= f.label :bio %><br />
-    <%= f.text_area :bio %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
