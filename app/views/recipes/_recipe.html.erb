@@ -2,14 +2,15 @@
   <div class="card">
     <div class="card-header p-0 position-relative">
       <a href="#">
-        <%= image_tag("blog1.jpg", :alt => "Card image cap", class: "card-img-bottom") %>
+        <%= image_tag(recipe.foto.url(:thumb), :alt => "Card image cap", class: "card-img-bottom") %>
         <span class="fa fa-book post-icon"></span>
       </a>
     </div>
     <div class="card-body">
       <h6 class="let-spa mb-3"><%= recipe.try(:created_at).strftime("%d-%m-%Y") %></h6>
       <h5 class="blog-title card-title">
-        <a href="#"><%= recipe.name %></a>
+        <a href="#">
+        <%= link_to "#{recipe.name}", recipe %>
       </h5>
       <div class="row mt-5">
         <div class="col-3 testi-img-res px-2">

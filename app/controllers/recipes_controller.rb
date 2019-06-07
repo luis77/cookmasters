@@ -12,7 +12,17 @@ class RecipesController < ApplicationController
   # GET /recipes/1
   # GET /recipes/1.json
   def show
+    respond_to do |format|
+        format.html
+        format.pdf do
+          pdf = RecipePdf.new(@recipe)
+          send_data pdf.render, filename: "Receta##{@recipe.try(:name)}.pdf",
+                                type: "application/pdf",
+                                disposition: "inline"
+        end
+    end
   end
+
 
   # GET /recipes/new
   def new
@@ -30,8 +40,10 @@ class RecipesController < ApplicationController
 
     respond_to do |format|
       if @recipe.save
-        params[:lista].each do |(c,ingrediente)|
-          Ingredient.create(name: ingrediente, recipe_id:@recipe.id)
+        if params[:lista].present?
+          params[:lista].each do |(c,ingrediente)|
+            Ingredient.create(name: ingrediente, recipe_id:@recipe.id)
+          end
         end
         format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
         format.json { render :show, status: :created, location: @recipe }
@@ -76,6 +88,6 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:name, :body)
+      params.require(:recipe).permit(:name, :body, :foto)
     end
 end

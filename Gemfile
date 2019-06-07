@@ -34,6 +34,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'devise'
 gem "font-awesome-rails", '~> 4.7'
+gem "paperclip"
+gem 'remotipart' #Esta gema sirve para guardar las imagenes en formularios retomos, sino dara un error. se debe añadir esta gema y ademas colocar en application.js //= require jquery.remotipart   --La documentación: https://github.com/JangoSteve/remotipart
+
+gem 'prawn'
+gem 'prawn-table'
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
