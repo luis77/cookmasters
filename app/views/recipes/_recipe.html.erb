@@ -12,6 +12,12 @@
         <a href="#">
         <%= link_to "#{recipe.name}", recipe %>
       </h5>
+      <div class="row">
+        <div class="col-12" style="text-align: right; color: #999;">
+        <p><%= link_to 'Editar', edit_recipe_path(recipe) %></p>
+
+        </div>
+      </div>
       <div class="row mt-5">
         <div class="col-3 testi-img-res px-2">
           <%= image_tag("te1.jpg", :alt => "", class: "img-fluid rounded-circle") %>

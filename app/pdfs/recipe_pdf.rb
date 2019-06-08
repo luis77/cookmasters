@@ -2,47 +2,60 @@ class RecipePdf < Prawn::Document
   def initialize(recipe)
     super(top_margin: 70)
     @recipe = recipe
-    info_recipe
-    line_items
-    detalles_item
+    info_receta
+    detalle_receta
+    ingredientes
+    preparacion
+    acerca_de
   end
 
-  def info_recipe
-    text "Venta", size: 25, style: :bold, :align => :center
+  def info_receta
+    text "#{@recipe.name}", size: 25, style: :bold, :align => :center
 
   end
 
 
 
-  def line_items
+  def detalle_receta
+    id_sample = open("#{@recipe.foto.path(:thumb)}")
+    image id_sample, at: [280,590], height: 161, width: 250
     move_down 20
-    table [["Ruta", "Cliente", "Responsable", "Nombre Comercial", "Folio"],[@venta.ruta.try(:Ruta), @venta.try(:CodCliente), @venta.try(:cliente).try(:Nombre), @venta.try(:cliente).try(:NombreCorto), @venta.try(:Documento)]], :cell_style => { :font => "Helvetica", :size => 9, :border_width => 0.5, :borders => [:top, :bottom], :border_color => "B0B0B0", :text_color => "737373"} do
-      row(0).font_style = :bold
-      columns(1..3).align = :center
-      self.row_colors = ["DDDDDD", "FFFFFF"]
-      self.header = true
-    end
   end
 
-
-
-  def detalles_item
+  def ingredientes
+    text "Ingredientes:", size: 15, style: :bold, :align => :left
     move_down 20
-    table detalles_item_rows, :cell_style => { :font => "Helvetica", :size => 9, :border_width => 0.5, :borders => [:top, :bottom], :border_color => "B0B0B0", :text_color => "737373"}  do
-      row(0).font_style = :bold
-      columns(1..3).align = :center
-      self.row_colors = ["DDDDDD", "FFFFFF"]
-      self.header = true
+    indent(10, 10) do # left and right padding
+
+     @recipe.ingredients.map do |ingrediente|
+      text "• #{ingrediente.try(:name)}", size: 10, left_margin: 500
+     end
     end
+    move_down 20
   end
 
-  def detalles_item_rows
-    [["Sku", "Producto", "Unidad", "Cantidad", "Precio unitario", "Subtotal", "IVA", "Descuento", "Total"]] +
-     @detalles.map do |detalleve|
-      [detalleve.try(:Articulo), detalleve.try(:Descripcion), if detalleve.Tipo == 0 then "Cajas" else "piezas" end, detalleve.try(:Pza), (detalleve.Precio / ((detalleve.producto.IVA.to_f/100)+1)).to_d.truncate(2).to_f,
-       detalleve.try(:Importe),detalleve.try(:IVA), detalleve.try(:DescMon), (detalleve.try(:Importe) + detalleve.try(:IVA)) - detalleve.try(:DescMon)]
+  def preparacion
+    move_down 130
+    text "Preparación:", size: 15, style: :bold, :align => :left
+    move_down 20
+    indent(40, 10) do # left and right padding
+      text "#{@recipe.try(:body)}", size: 10, left_margin: 500
     end
+    move_down 20
   end
+
+  def acerca_de
+    move_down 40
+    text "Acerca de:", size: 15, style: :bold, :align => :left
+    move_down 20
+    indent(40, 10) do # left and right padding
+      text "Autor: #{@recipe.user.try(:name)} #{@recipe.user.try(:last_name)}", size: 10, left_margin: 500
+      text "Fecha: #{@recipe.try(:created_at).strftime("%d-%m-%Y")}", size: 10, left_margin: 500
+    end
+    move_down 20
+  end
+
+
 
 
 

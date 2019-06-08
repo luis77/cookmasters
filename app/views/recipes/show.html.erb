@@ -26,10 +26,15 @@
 				<p style="font-size: 1.1em;"><%= @recipe.body %></p>
 			</div>
 		</div>
+		<div class="row flex-row-reverse pb-5">
+			<div class="col-lg-12 abou-right-w3layuts mt-5">
+				<p style="font-size: 1.1em;"> <%= link_to 'Descargar como pdf', recipe_path(:recipe => @recipe.try(:id), :format => 'pdf'), data: { disable_with: 'Imprimiendo...' }, class: "fa fa-file-pdf-o"  %></p>
+			</div>
+		</div>
 
 	</div>
 
-	    <%= link_to 'Descargar como pdf', recipe_path(:recipe => @recipe.try(:id), :format => 'pdf'), data: { disable_with: 'Imprimiendo...' }, class: "btn btn-danger fa fa-file-pdf-o"  %>
+	   
 </section>
 <!-- //about -->
 
