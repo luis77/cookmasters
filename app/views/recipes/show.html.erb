@@ -28,7 +28,17 @@
 		</div>
 		<div class="row flex-row-reverse pb-5">
 			<div class="col-lg-12 abou-right-w3layuts mt-5">
-				<p style="font-size: 1.1em;"> <%= link_to 'Descargar como pdf', recipe_path(:recipe => @recipe.try(:id), :format => 'pdf'), data: { disable_with: 'Imprimiendo...' }, class: "fa fa-file-pdf-o"  %></p>
+
+				<p style="font-size: 1.1em; text-align: center;"> 
+				<% if @me_gusta.present? %>
+					<%= link_to 'Me gusta', recipe_like_path(:id => @recipe.try(:id)), remote: true, data: { disable_with: 'Gustando...' },id:"me_gusta", class: "fa fa-heart", style:"color: rgb(227, 30, 38); outline: 0;" %> 
+				<%else%>
+					<%= link_to 'Me gusta', recipe_like_path(:id => @recipe.try(:id)), remote: true, data: { disable_with: 'Sin gustar...' },id:"me_gusta", class: "fa fa-heart", style:"color: #999; outline: 0;" %>
+				<%end%>
+				 |
+				 <%= link_to 'Descargar pdf', recipe_path(:format => 'pdf'), target: :_blank, class: "fa fa-file-pdf-o", style:"color: #999;"  %>
+				 	
+				 </p>
 			</div>
 		</div>
 

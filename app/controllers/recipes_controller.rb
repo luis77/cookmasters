@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy, :recipe_like]
   before_action :authenticate_user!
 
   # GET /recipes
@@ -12,6 +12,7 @@ class RecipesController < ApplicationController
   # GET /recipes/1
   # GET /recipes/1.json
   def show
+    @me_gusta = Like.find_by(recipe_id: @recipe.id, user_id: current_user.id)
     respond_to do |format|
         format.html
         format.pdf do
@@ -20,6 +21,22 @@ class RecipesController < ApplicationController
                                 type: "application/pdf",
                                 disposition: "inline"
         end
+    end
+  end
+
+  def recipe_like
+    @like = Like.find_by(recipe_id: @recipe.id, user_id: current_user.id)
+    if @like.nil?
+      @me_gusta = Like.create(recipe_id: @recipe.id, user_id: current_user.id) 
+    else
+      @like.delete 
+    end
+    respond_to do |format|
+      if @me_gusta.present?
+        format.js {flash.now[:notice] = 'Te ha gustado la receta'} 
+      else 
+        format.js {} 
+      end
     end
   end
 
