@@ -39,7 +39,7 @@ gem 'remotipart' #Esta gema sirve para guardar las imagenes en formularios retom
 
 gem 'prawn'
 gem 'prawn-table'
-
+gem 'jquery-rails'             # Use jquery as the JavaScript library
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

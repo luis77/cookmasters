@@ -1,0 +1,45 @@
+/*Devise flash*/
+.alert-error {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: center;
+	float: right;
+	width: 40%;
+	margin-top: -10px;
+	margin-right: 25%;
+	z-index: 2000;
+	position: relative;
+}
+.alert-alert {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: center;
+	float: right;
+	width: 40%;
+	margin-top: -10px;
+	margin-right: 25%;
+	z-index: 2000;
+	position: relative;
+}
+.alert-notice {
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+	color: #468847;
+	text-align: left;
+	float: right;
+	width: 40%;
+	margin-top: 5%;
+	margin-right: 25%;
+	z-index: 5000;
+	position: absolute;
+	margin-left: 31%;
+	opacity: 0.9;
+}
+/*Devise flash*/
+#notice{
+	position: sticky;
+	top:0;
+	z-index: 999999;
+}

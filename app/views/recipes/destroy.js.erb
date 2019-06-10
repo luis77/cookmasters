@@ -1,9 +1,4 @@
-<% if @puede_destroy == true%>
-  $("#cliente_<%= @cliente.id %>").fadeOut(500, function(){
-    $(this).remove();
-    $(".child").remove();
-  });
-<%end%>
+$("#recipe_<%= @recipe.id %>").remove();
 $("#notice").html("<%= escape_javascript(render :partial => 'partials/flash' , :locals => { :flash => flash }).html_safe %>");
 
 setTimeout(function(){

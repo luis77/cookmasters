@@ -3,8 +3,7 @@
   $(".recipe_body").val('');
   $(".recipe_ingredientes").remove();
 
-$("#container_recipes").prepend('<%= j render @recipe %>'); //Prepend before append
-$("#recipe_<%= @recipe.id %>").hide().fadeIn(1000);
+$(".container_recipes").prepend('<%= j render @recipe %>'); //Prepend before append
 
 $("#notice").html("<%= escape_javascript(render :partial => 'partials/flash' , :locals => { :flash => flash }).html_safe %>");
 

@@ -1,6 +1,11 @@
+<style type="text/css">
+  .alert{
+    position: absolute !important;
+  }
+</style>
 <!--flash messages-->
   <% flash.each do |key, msg| %>
-      <div align="center" id="flash" class="alert alert-<%= key %>">
+      <div align="center" id="flash" class="alert alert-<%= key %>" style="">
         <a href="#" data-dismiss="alert" class="close">×</a>
         <ul style="text-align: center">
           <l>

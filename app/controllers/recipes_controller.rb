@@ -96,6 +96,7 @@ class RecipesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
       format.json { head :no_content }
+      format.js {flash.now[:notice] = 'La receta se ha eliminado de forma exitosa.'} #ajax
     end
   end
 
