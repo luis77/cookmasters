@@ -1,5 +1,5 @@
 class Recipe < ApplicationRecord
-  has_attached_file :foto, styles: { medium: "1200x720", thumb: "362x240>" }
+  has_attached_file :foto, styles: {thumb: "640x426" }
   validates_attachment_content_type :foto, content_type: /\Aimage\/.*\z/
   belongs_to :user
   has_many :ingredients 

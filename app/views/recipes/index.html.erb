@@ -5,15 +5,16 @@
 
 }
 </style>
-<p id="notice"><%= notice %></p>
-<%= link_to 'New Recipe', new_recipe_path %>
 
-<div class="text-center">
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mi_nueva_receta">
-    Nueva receta
-  </button>
-</div>
+<style type="text/css">
+  .containerx {
+      background-color: #ffffffed;
+      margin-top: -4%;
+      padding-top: 8% !important;
+      padding-left: 2%;
+
+  }
+</style>
 
 
 <!-- Modal -->
@@ -76,8 +77,20 @@
 <%end%>
 
 
-  <section class="blog py-5" id="blog">
-    <div class="container py-xl-5 py-lg-3">
+  <section class="blog receta" id="blog">
+  <!--
+<%= link_to 'New Recipe', new_recipe_path %>
+-->
+    <div class="text-center">
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mi_nueva_receta">
+        Nueva receta
+      </button>
+    </div>
+
+
+    
+    <div class="container containerx py-xl-5 py-lg-3">
       <h3 class="title-w3ls text-center text-bl mb-5">Mis recetas</h3>
       <div class="row container_recipes">
         <%= render @recipes%>

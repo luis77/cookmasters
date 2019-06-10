@@ -3,6 +3,7 @@
 <%else%>
   document.getElementById("me_gusta").style.color = "#999";
 <%end%>
+$('#likes').html('<%= escape_javascript(render("likes")) %>');
 $("#notice").html("<%= escape_javascript(render :partial => 'partials/flash' , :locals => { :flash => flash }).html_safe %>");
 
 setTimeout(function(){

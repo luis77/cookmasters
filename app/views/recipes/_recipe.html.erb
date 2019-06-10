@@ -1,8 +1,19 @@
+<style type="text/css">
+  .foto {
+  object-fit: cover;
+
+  width: 358px;
+  height: 207px;
+}
+</style>
+
+
+
 <div class="col-lg-4 col-md-6 px-md-2" id= "recipe_<%= recipe.id %>">
   <div class="card">
     <div class="card-header p-0 position-relative">
       <a href="#">
-        <%= image_tag(recipe.foto.url(:thumb), :alt => "Card image cap", class: "card-img-bottom") %>
+        <%= image_tag(recipe.foto.url(:thumb), :alt => "Card image cap", class: "card-img-bottom foto") %>
         <span class="fa fa-book post-icon"></span>
       </a>
     </div>
@@ -14,19 +25,12 @@
       </h5>
       <div class="row">
         <div class="col-12" style="text-align: right; color: #999;">
-        <p><%= link_to 'Editar', edit_recipe_path(recipe) %></p>
+        <p><%= link_to 'Editar', edit_recipe_path(recipe) %> <%= link_to 'Eliminar', edit_recipe_path(recipe) %></p>
 
-        </div>
-      </div>
-      <div class="row mt-5">
-        <div class="col-3 testi-img-res px-2">
-          <%= image_tag("te1.jpg", :alt => "", class: "img-fluid rounded-circle") %>
-        </div>
-        <div class="col-9 w3_testi_grid mt-xl-2 mt-lg-0 mt-md-2 mt-4">
-          <h5 class="mb-1"><%= recipe.user.try(:name)%> <%= recipe.user.try(:last_name)%></h5>
-          <p>Sed do eiusmod</p>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+

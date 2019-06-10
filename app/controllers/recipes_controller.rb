@@ -12,6 +12,7 @@ class RecipesController < ApplicationController
   # GET /recipes/1
   # GET /recipes/1.json
   def show
+    @likes = @recipe.likes.all.count
     @me_gusta = Like.find_by(recipe_id: @recipe.id, user_id: current_user.id)
     respond_to do |format|
         format.html
@@ -31,6 +32,7 @@ class RecipesController < ApplicationController
     else
       @like.delete 
     end
+    @likes = @recipe.likes.all.count
     respond_to do |format|
       if @me_gusta.present?
         format.js {flash.now[:notice] = 'Te ha gustado la receta'} 
@@ -59,7 +61,7 @@ class RecipesController < ApplicationController
       if @recipe.save
         if params[:lista].present?
           params[:lista].each do |(c,ingrediente)|
-            Ingredient.create(name: ingrediente, recipe_id:@recipe.id)
+            Ingredient.create(name: ingrediente, recipe_id:@recipe.id) if ingrediente != ""
           end
         end
         format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
