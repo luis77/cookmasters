@@ -2,13 +2,16 @@
   $(".recipe_name").val('');
   $(".recipe_body").val('');
   $(".recipe_ingredientes").remove();
+  $("#recipe_foto").val('');
+  $(".ingredientes_añadidos").remove();
 
 $(".container_recipes").prepend('<%= j render @recipe %>'); //Prepend before append
 
 $("#notice").html("<%= escape_javascript(render :partial => 'partials/flash' , :locals => { :flash => flash }).html_safe %>");
-
+var orden=0;
 setTimeout(function(){
   $('#notice').fadeIn("slow", function() {
     $(this).create();
   })
 }, 1500);
+

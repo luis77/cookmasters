@@ -4,14 +4,32 @@
     margin-top: 1rem !important;
 
 }
+
+
 </style>
 
 <style type="text/css">
   .containerx {
       background-color: #ffffffed;
-      margin-top: -4%;
-      padding-top: 8% !important;
+      margin-top: 0%;
+      padding-top: 5% !important;
       padding-left: 2%;
+      min-height: 50rem;
+
+
+
+
+overflow: hidden;
+  }
+
+  .receta {
+    min-height: 100%;
+    position: absolute;
+    width: 100%;
+
+
+
+overflow: hidden;
 
   }
 </style>
@@ -81,6 +99,13 @@
   <!--
 <%= link_to 'New Recipe', new_recipe_path %>
 -->
+
+
+
+    
+    <div class="container containerx py-xl-5 py-lg-3">
+
+
     <div class="text-center">
       <!-- Button trigger modal -->
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mi_nueva_receta">
@@ -88,9 +113,6 @@
       </button>
     </div>
 
-
-    
-    <div class="container containerx py-xl-5 py-lg-3">
       <h3 class="title-w3ls text-center text-bl mb-5">Mis recetas</h3>
       <div class="row container_recipes">
         <%= render @recipes%>
@@ -106,7 +128,7 @@
       function miIngrediente() {
         orden=orden+1;
         var y = document.createElement("DIV");
-        y.setAttribute("class", "form-group col-md-4");
+        y.setAttribute("class", "form-group col-md-4 ingredientes_añadidos");
         var x = document.createElement("INPUT");
         x.setAttribute("type", "text");
         x.setAttribute("name", `lista[ingrediente_${orden}]`);

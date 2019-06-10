@@ -1,19 +1,8 @@
-<style type="text/css">
-  .foto {
-  object-fit: cover;
-
-  width: 358px;
-  height: 207px;
-}
-</style>
-
-
-
 <div class="col-lg-4 col-md-6 px-md-2" id= "recipe_<%= recipe.id %>">
   <div class="card">
     <div class="card-header p-0 position-relative">
       <a href="#">
-        <%= image_tag(recipe.foto.url(:thumb), :alt => "Card image cap", class: "card-img-bottom foto") %>
+        <%= image_tag(recipe.foto.url(:recortada), :alt => "Card image cap", class: "card-img-bottom foto") %>
         <span class="fa fa-book post-icon"></span>
       </a>
     </div>
