@@ -82,9 +82,11 @@ class RecipesController < ApplicationController
       if @recipe.update(recipe_params)
         format.html { redirect_to @recipe, notice: 'Recipe was successfully updated.' }
         format.json { render :show, status: :ok, location: @recipe }
+        format.js {flash.now[:notice] = 'La receta se ha actualizado de forma exitosa.'} 
       else
         format.html { render :edit }
         format.json { render json: @recipe.errors, status: :unprocessable_entity }
+        format.js {flash.now[:alert] = 'Error al actuar la receta.'} 
       end
     end
   end
