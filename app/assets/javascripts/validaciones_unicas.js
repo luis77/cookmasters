@@ -1,5 +1,4 @@
-$(document).on("ready page:load", function() {
-
+$(document ).on('turbolinks:load', function() {
 $(".user-validado").validate({
 debug: true,
 rules: {
