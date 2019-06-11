@@ -5,9 +5,10 @@ Rails.application.routes.draw do
     sessions: "users/sessions",
     passwords: "users/passwords"}
     resources :users do
-      get 'users_check', :on => :collection
-      get 'users_check2', :on => :collection
+      get 'user_check', :on => :collection
+      get 'user_check2', :on => :collection
     end
+
 
   get 'welcome/index'
   root 'welcome#index'

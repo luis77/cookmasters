@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  scope :comprobar_existencia, ->(paramc) { where(username: paramc)}
+  scope :comprobar_existencia_Email, ->(param_e) { where(email: param_e)}
+
   has_many :recipes, dependent: :destroy
 
   validates :email, presence: true, uniqueness: true

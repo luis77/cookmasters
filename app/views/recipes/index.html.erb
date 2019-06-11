@@ -36,7 +36,7 @@ overflow: hidden;
 
 
 <!-- Modal -->
-<%= form_for(@recipe, remote: true) do |f| %> <!--ajax remote: true-->
+<%= form_for(@recipe, remote: true, html: {class: "formulario-validado-create"}) do |f| %> <!--ajax remote: true-->
 <div class="modal fade bd-example-modal-lg" id="mi_nueva_receta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
@@ -50,7 +50,7 @@ overflow: hidden;
 
         <div class="form-group">
           <div class="col-md-8">
-           Nombre: <%= f.text_field :name, class: "form-control recipe_name",autofocus: true, minlength: "1"  %>
+           Nombre: <%= f.text_field :name, class: "form-control recipe_name",autofocus: true, minlength: "5", :required => "true"  %>
           </div>
         </div>
 
@@ -73,7 +73,7 @@ overflow: hidden;
         <div class="form-group">
           <%= f.label :body, "Descripción:", class: "control-label col-md-2"  %>
           <div class="col-md-12">
-            <%= f.text_area :body, class: "form-control recipe_body",style:"height: 200px;" %>
+            <%= f.text_area :body, class: "form-control recipe_body",style:"height: 200px;", :required => "true", minlength: "20" %>
           </div>
         </div>
 

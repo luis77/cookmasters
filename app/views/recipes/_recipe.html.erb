@@ -55,7 +55,7 @@
 
           <div class="form-group">
             <div class="col-md-8">
-             Nombre: <%= f.text_field :name, class: "form-control recipe_name",autofocus: true, minlength: "1"  %>
+             Nombre: <%= f.text_field :name, class: "form-control recipe_name",autofocus: true, minlength: "5", :required => "true"  %>
             </div>
           </div>
 
@@ -78,7 +78,7 @@
           <div class="form-group">
             <%= f.label :body, "Descripción:", class: "control-label col-md-2"  %>
             <div class="col-md-12">
-              <%= f.text_area :body, class: "form-control recipe_body",style:"height: 200px;" %>
+              <%= f.text_area :body, class: "form-control recipe_body",style:"height: 200px;", minlength: "20", :required => "true" %>
             </div>
           </div>
 
@@ -98,3 +98,8 @@
     </div>
   </div>
   <%end%>
+
+
+  <script>
+    $(".formulario-validado-update<%=recipe.id%>").validate();
+  </script>
