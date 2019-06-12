@@ -21,6 +21,15 @@
     <%= form.text_area :body %>
   </div>
 
+
+        <div class="field">
+          <%= form.label :foto, "Foto:", class: "control-label col-md-2"  %>
+          <div class="col-md-12">
+            <%= form.file_field :foto, class: "recipe_foto" %>
+          </div>
+        </div>
+  
+
   <div class="actions">
     <%= form.submit %>
   </div>

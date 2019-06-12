@@ -12,17 +12,20 @@
 
 ActiveRecord::Schema.define(version: 2019_06_09_044637) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "ingredients", force: :cascade do |t|
     t.string "name"
-    t.integer "recipe_id"
+    t.bigint "recipe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"
   end
 
   create_table "likes", force: :cascade do |t|
-    t.integer "recipe_id"
-    t.integer "user_id"
+    t.bigint "recipe_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["recipe_id"], name: "index_likes_on_recipe_id"
@@ -32,7 +35,7 @@ ActiveRecord::Schema.define(version: 2019_06_09_044637) do
   create_table "recipes", force: :cascade do |t|
     t.string "name"
     t.text "body"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "foto_file_name"
@@ -60,4 +63,8 @@ ActiveRecord::Schema.define(version: 2019_06_09_044637) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "ingredients", "recipes"
+  add_foreign_key "likes", "recipes"
+  add_foreign_key "likes", "users"
+  add_foreign_key "recipes", "users"
 end
