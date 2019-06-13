@@ -14,4 +14,12 @@ Rails.application.routes.draw do
   root 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'recipe_like', to: 'recipes#recipe_like', as: 'recipe_like'
+
+  namespace 'api' do
+    namespace 'v1' do
+      resources :recipes
+      get 'like', to: 'recipes#like', as: 'like'
+    end 
+  end
+
 end

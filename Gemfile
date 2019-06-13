@@ -41,7 +41,7 @@ gem 'prawn'
 gem 'prawn-table'
 gem 'jquery-rails'             # Use jquery as the JavaScript library
 gem 'jquery-ui-rails'
-gem 'pg', '~> 0.15'
+gem 'pg', '~> 0.18'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
