@@ -1,6 +1,7 @@
 $("#myupdaterecipe_<%= @recipe.id %>").modal('hide');
 
 $("#recipe_<%= @recipe.id %>").remove();
+$(".modal-backdrop").remove();
 $(".container_recipes").prepend('<%= j render @recipe %>'); //Prepend before append
 
 $("#notice").html("<%= escape_javascript(render :partial => 'partials/flash' , :locals => { :flash => flash }).html_safe %>");

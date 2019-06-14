@@ -42,6 +42,8 @@ gem 'prawn-table'
 gem 'jquery-rails'             # Use jquery as the JavaScript library
 gem 'jquery-ui-rails'
 gem 'pg', '~> 0.18'
+gem 'bootstrap4-kaminari-views'
+gem "kaminari" #Paginacion
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

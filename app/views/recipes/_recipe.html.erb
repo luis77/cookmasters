@@ -1,5 +1,5 @@
 <div class="col-lg-4 col-md-6 px-md-2" id= "recipe_<%= recipe.id %>">
-  <div class="card">
+  <div class="card"> 
     <div class="card-header p-0 position-relative">
       <a href="#">
         <%= image_tag(recipe.foto.url(:recortada), :alt => "Card image cap", class: "card-img-bottom foto") %>
@@ -36,13 +36,12 @@
 
 
   
-</div>
 
 
 <!-- Modal -->
 
   <%= form_for(recipe, :method => :put, remote: true, html: {class: "formulario-validado-update#{recipe.id}"}) do |f| %> <!--ajax remote: true-->
-  <div class="modal fade bd-example-modal-lg" id="myupdaterecipe_<%= recipe.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade bd-example-modal-lg myupdaterecipe_<%= recipe.id %>" id="myupdaterecipe_<%= recipe.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -103,3 +102,5 @@
   <script>
     $(".formulario-validado-update<%=recipe.id%>").validate();
   </script>
+
+</div>

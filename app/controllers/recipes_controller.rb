@@ -6,12 +6,18 @@ class RecipesController < ApplicationController
   # GET /recipes.json
   def index
     @recipe = Recipe.new
-    @recipes = Recipe.all
+    @recipes = current_user.recipes.page(params[:page]).per(3)
+
   end
 
   # GET /recipes/1
   # GET /recipes/1.json
   def show
+
+
+@likex = ActiveRecord::Base.connection.execute("SELECT FROM total_likes()")
+
+
     @likes = @recipe.likes.all.count
     @me_gusta = Like.find_by(recipe_id: @recipe.id, user_id: current_user.id)
     respond_to do |format|
@@ -32,6 +38,8 @@ class RecipesController < ApplicationController
     else
       @like.delete 
     end
+
+
     @likes = @recipe.likes.all.count
     respond_to do |format|
       if @me_gusta.present?

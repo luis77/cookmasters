@@ -4,7 +4,7 @@
     <!-- logo -->
     <h1 class="logo-style-res float-left">
 
-      <%= link_to image_tag("logo.png", :alt => "logo", class: "img-fluid logo-img mt-1",style:"width: 50px;"), root_path  %> CookMasters
+      <%= link_to image_tag("logo.png", class: "img-fluid logo-img mt-1",style:"width: 50px;"), root_path  %> CookMasters
     </h1>
     <!-- //logo -->
     <!-- nav -->
@@ -14,27 +14,10 @@
         <input type="checkbox" id="drop" />
         <ul class="menu mx-lg-auto">
           <li><%= link_to "Home", root_path, class: "active" %></li>
-          <li><a href="#about">About Us</a></li>
-          <li>
-            <!-- First Tier Drop Down -->
-            <label for="drop-2" class="toggle toogle-2">Pages <span class="fa fa-angle-down"
-                aria-hidden="true"></span>
-            </label>
-            <a href="#">Pages <span class="fa fa-angle-down" aria-hidden="true"></span></a>
-            <input type="checkbox" id="drop-2" />
-            <ul>
-              <li><a href="#chefs" class="drop-text">Our Chef's</a></li>
-              <li><a href="#blog" class="drop-text">Blog Posts</a></li>
-              <li><a href="#services" class="drop-text">Services</a></li>
-              <li><a href="#what" class="drop-text">Achievements</a></li>
-              <li><a href="#testi" class="drop-text">Reviews</a></li>
-              <li><a href="#subscribe" class="drop-text">Subscribe</a></li>
-            </ul>
-          </li>
-
           <% if user_signed_in? %>
             <li><%= link_to "Mis recetas", recipes_path %></li>
             <li><%= link_to '<i class="fa fa-sign-out pull-right"></i> Cerrar sesión'.html_safe, destroy_user_session_path, method: :delete%></li>
+            <li style="color:#a8171d !important"><%= current_user.username%></li>
             <%else%>
             <li><%= link_to '<i class="fa fa-sign-out pull-right"></i> Iniciar sesión'.html_safe, new_user_session_path%></li>
             <%end%>

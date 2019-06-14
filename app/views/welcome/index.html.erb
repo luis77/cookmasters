@@ -42,92 +42,37 @@
 	<!-- about -->
 	<section class="blog py-5" id="blog">
 		<div class="container py-xl-5 py-lg-3">
-			<h3 class="title-w3ls text-center text-bl mb-5">Nuestras mejores recetas</h3>
+			<h3 class="title-w3ls text-center text-bl mb-5">Nuestras 3 mejores recetas</h3>
 			<div class="row">
-				<!-- blog grid -->
-				<div class="col-lg-4 col-md-6 px-md-2">
-					<div class="card">
-						<div class="card-header p-0 position-relative">
-							<a href="#">
-								<%= image_tag("blog1.jpg", :alt => "Card image cap", class: "card-img-bottom") %>
-								<span class="fa fa-user post-icon"></span>
-							</a>
-						</div>
-						<div class="card-body">
-							<h6 class="let-spa mb-3">20 April 2019</h6>
-							<h5 class="blog-title card-title">
-								<a href="#">At vero eos et accusam et
-									justo duo dolores et ea rebum</a>
-							</h5>
-							<div class="row mt-5">
-								<div class="col-3 testi-img-res px-2">
-									<%= image_tag("te1.jpg", :alt => "", class: "img-fluid rounded-circle") %>
-								</div>
-								<div class="col-9 w3_testi_grid mt-xl-2 mt-lg-0 mt-md-2 mt-4">
-									<h5 class="mb-1">Adam Ster</h5>
-									<p>Sed do eiusmod</p>
-								</div>
-							</div>
-						</div>
+    			<% @las_mejores_recetas.each do |recipe| %>
+					<div class="col-lg-4 col-md-6 px-md-2">
+					  <div class="card"> 
+					    <div class="card-header p-0 position-relative">
+					      <a href="#">
+							<%= link_to recipe do %>
+							   <%= image_tag(recipe.foto.url(:recortada), :alt => "Card image cap", class: "card-img-bottom foto") %>
+							<% end %>
+					      </a>
+					    </div>
+					    <div class="card-body">
+					      <h6 class="let-spa mb-3"><%= recipe.try(:created_at).strftime("%d-%m-%Y") %></h6>
+					      <h5 class="blog-title card-title">
+					        <a href="#">
+					        <%= link_to "#{recipe.name}", recipe %>
+					      </h5>
+					      <div class="row">
+					        <div class="col-12" style="text-align: right; color: #999;">
+					          <p>
+
+					        </div>
+					        <% if recipe.likes.all.count != 0%>
+					          <%= recipe.likes.all.count %> <i class="fa fa-heart", style="color: rgb(227, 30, 38);"></i>
+					        <% end%>
+					      </div>
+					    </div>
+					  </div>
 					</div>
-				</div>
-				<!-- //blog grid -->
-				<!-- blog grid -->
-				<div class="col-lg-4 col-md-6 px-md-2 mt-md-0 mt-5">
-					<div class="card">
-						<div class="card-header p-0 position-relative">
-							<a href="#">
-								<%= image_tag("blog2.jpg", :alt => "Card image cap", class: "card-img-bottom") %>
-								<span class="fa fa-user post-icon"></span>
-							</a>
-						</div>
-						<div class="card-body">
-							<h6 class="let-spa mb-3">22 April 2019</h6>
-							<h5 class="blog-title card-title">
-								<a href="#">At vero eos et accusam et
-									justo duo dolores et ea rebum</a>
-							</h5>
-							<div class="row mt-5">
-								<div class="col-3 testi-img-res px-2">
-									<%= image_tag("te2.jpg", :alt => "", class: "img-fluid rounded-circle") %>
-								</div>
-								<div class="col-9 w3_testi_grid mt-xl-2 mt-lg-0 mt-md-2 mt-4">
-									<h5 class="mb-1">Anna Mull</h5>
-									<p>Sed do eiusmod</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- //blog grid -->
-				<!-- blog grid -->
-				<div class="col-lg-4 col-md-6 px-md-2 mt-lg-0 mt-5">
-					<div class="card">
-						<div class="card-header p-0 position-relative">
-							<a href="#">
-								<%= image_tag("blog3.jpg", :alt => "Card image cap", class: "card-img-bottom") %>
-								<span class="fa fa-user post-icon"></span>
-							</a>
-						</div>
-						<div class="card-body">
-							<h6 class="let-spa mb-3">24 April 2019</h6>
-							<h5 class="blog-title card-title">
-								<a href="#">At vero eos et accusam et
-									justo duo dolores et ea rebum</a>
-							</h5>
-							<div class="row mt-5">
-								<div class="col-3 testi-img-res px-2">
-									<%= image_tag("te3.jpg", :alt => "", class: "img-fluid rounded-circle") %>
-								</div>
-								<div class="col-9 w3_testi_grid mt-xl-2 mt-lg-0 mt-md-2 mt-4">
-									<h5 class="mb-1">Petey Cruiser</h5>
-									<p>Sed do eiusmod</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- //blog grid -->
+    			<% end %>
 			</div>
 		</div>
 	</section>
@@ -199,90 +144,41 @@
 		<div class="container py-xl-5 py-lg-3">
 			<h3 class="title-w3ls text-center text-bl mb-5">Todas nuestras recetas</h3>
 			<div class="row">
-				<!-- blog grid -->
-				<div class="col-lg-4 col-md-6 px-md-2">
-					<div class="card">
-						<div class="card-header p-0 position-relative">
-							<a href="#">
-								<%= image_tag("blog1.jpg", :alt => "Card image cap", class: "card-img-bottom") %>
-								<span class="fa fa-user post-icon"></span>
-							</a>
-						</div>
-						<div class="card-body">
-							<h6 class="let-spa mb-3">20 April 2019</h6>
-							<h5 class="blog-title card-title">
-								<a href="#">At vero eos et accusam et
-									justo duo dolores et ea rebum</a>
-							</h5>
-							<div class="row mt-5">
-								<div class="col-3 testi-img-res px-2">
-									<%= image_tag("te1.jpg", :alt => "", class: "img-fluid rounded-circle") %>
-								</div>
-								<div class="col-9 w3_testi_grid mt-xl-2 mt-lg-0 mt-md-2 mt-4">
-									<h5 class="mb-1">Adam Ster</h5>
-									<p>Sed do eiusmod</p>
-								</div>
-							</div>
-						</div>
+				<% @recetas.each do |recipe| %>
+					<div class="col-lg-4 col-md-6 px-md-2">
+					  <div class="card"> 
+					    <div class="card-header p-0 position-relative">
+					      <a href="#">
+							<%= link_to recipe do %>
+							   <%= image_tag(recipe.foto.url(:recortada), :alt => "Card image cap", class: "card-img-bottom foto") %>
+							<% end %>
+					        <span class="fa fa-book post-icon"></span>
+					      </a>
+					    </div>
+					    <div class="card-body">
+					      <h6 class="let-spa mb-3"><%= recipe.try(:created_at).strftime("%d-%m-%Y") %></h6>
+					      <h5 class="blog-title card-title">
+					        <a href="#">
+					        <%= link_to "#{recipe.name}", recipe %>
+					      </h5>
+					      <div class="row">
+					        <div class="col-12" style="text-align: right; color: #999;">
+					          <p>
+
+					        </div>
+					        <% if recipe.likes.all.count != 0%>
+					          <%= recipe.likes.all.count %> <i class="fa fa-heart", style="color: rgb(227, 30, 38); "></i>
+					          <%else%>
+					          <i class="fa fa-heart", style="color: #999; "></i>
+					        <% end%>
+					      </div>
+					    </div>
+					  </div>
 					</div>
-				</div>
-				<!-- //blog grid -->
-				<!-- blog grid -->
-				<div class="col-lg-4 col-md-6 px-md-2 mt-md-0 mt-5">
-					<div class="card">
-						<div class="card-header p-0 position-relative">
-							<a href="#">
-								<%= image_tag("blog2.jpg", :alt => "Card image cap", class: "card-img-bottom") %>
-								<span class="fa fa-user post-icon"></span>
-							</a>
-						</div>
-						<div class="card-body">
-							<h6 class="let-spa mb-3">22 April 2019</h6>
-							<h5 class="blog-title card-title">
-								<a href="#">At vero eos et accusam et
-									justo duo dolores et ea rebum</a>
-							</h5>
-							<div class="row mt-5">
-								<div class="col-3 testi-img-res px-2">
-									<%= image_tag("te2.jpg", :alt => "", class: "img-fluid rounded-circle") %>
-								</div>
-								<div class="col-9 w3_testi_grid mt-xl-2 mt-lg-0 mt-md-2 mt-4">
-									<h5 class="mb-1">Anna Mull</h5>
-									<p>Sed do eiusmod</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- //blog grid -->
-				<!-- blog grid -->
-				<div class="col-lg-4 col-md-6 px-md-2 mt-lg-0 mt-5">
-					<div class="card">
-						<div class="card-header p-0 position-relative">
-							<a href="#">
-								<%= image_tag("blog3.jpg", :alt => "Card image cap", class: "card-img-bottom") %>
-								<span class="fa fa-user post-icon"></span>
-							</a>
-						</div>
-						<div class="card-body">
-							<h6 class="let-spa mb-3">24 April 2019</h6>
-							<h5 class="blog-title card-title">
-								<a href="#">At vero eos et accusam et
-									justo duo dolores et ea rebum</a>
-							</h5>
-							<div class="row mt-5">
-								<div class="col-3 testi-img-res px-2">
-									<%= image_tag("te3.jpg", :alt => "", class: "img-fluid rounded-circle") %>
-								</div>
-								<div class="col-9 w3_testi_grid mt-xl-2 mt-lg-0 mt-md-2 mt-4">
-									<h5 class="mb-1">Petey Cruiser</h5>
-									<p>Sed do eiusmod</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- //blog grid -->
+    			<% end %>
+    	        <div class="row">
+        			<%= paginate @recetas %>
+      			</div>
 			</div>
 		</div>
 	</section>

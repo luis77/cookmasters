@@ -14,7 +14,9 @@
 
 		<div class="row flex-row-reverse pb-5">
 			<div class="col-lg-6">
-			<%= image_tag(@recipe.foto.url(:thumb), :alt => "Card image cap", class: "img-fluid mt-5") %>
+				<%= link_to recipe do %>
+				   <%= image_tag(recipe.foto.url(:recortada), :alt => "Card image cap", class: "card-img-bottom foto") %>
+				<% end %>
 			</div>
 			<div class="col-lg-6 abou-right-w3layuts mt-5">
 				<h3 class="mb-4"><%= @recipe.name %></h3>
