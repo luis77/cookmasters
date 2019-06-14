@@ -1,45 +1,6 @@
 <div class="index">
     <%= render :partial => 'partials/slider' %>
-	<!-- banner bottom grids -->
-	<section class="banner-bottom-w3layouts pb-5" id="services">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-4 about-in text-center">
-					<div class="serv-cont-wthree">
-						<div class="icon-wthrees">
-							<span class="fa fa-cutlery"></span>
-						</div>
-						<h5 class="card-title mb-3 mt-4">Comparte recetas</h5>
-						<p class="card-text">Lorem ipsum dolor sit amet consectetur elit,Adipisicing elit
-							tempor.</p>
-					</div>
-				</div>
-				<div class="col-lg-4 about-in text-center my-lg-0 my-4">
-					<div class="serv-cont-wthree">
-						<div class="icon-wthrees">
-							<span class="fa fa-smile-o"></span>
-						</div>
-						<h5 class="card-title mb-3 mt-4">Descubre nuevas recetas</h5>
-						<p class="card-text">Lorem ipsum dolor sit amet consectetur elit,Adipisicing elit
-							tempor.</p>
-					</div>
-				</div>
-				<div class="col-lg-4 about-in text-center">
-					<div class="serv-cont-wthree">
-						<div class="icon-wthrees">
-							<span class="fa fa-birthday-cake"></span>
-						</div>
-						<h5 class="card-title mb-3 mt-4">Date a conocer</h5>
-						<p class="card-text">Lorem ipsum dolor sit amet consectetur elit,Adipisicing elit
-							tempor.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- //banner bottom grids -->
 
-	<!-- about -->
 	<section class="blog py-5" id="blog">
 		<div class="container py-xl-5 py-lg-3">
 			<h3 class="title-w3ls text-center text-bl mb-5">Nuestras 3 mejores recetas</h3>
@@ -76,70 +37,6 @@
 			</div>
 		</div>
 	</section>
-	<!-- //about -->
-
-	<!-- team -->
-	<section class="teams py-5" id="chefs">
-		<div class="container py-xl-5 py-lg-3">
-			<h3 class="title-w3ls text-center text-wh mb-5">Nuestros mejores Chef's</h3>
-			<div class="row text-center">
-				<div class="col-lg-4">
-					<div class="team-gd">
-						<%= image_tag("t1.jpg", :alt => "user-image", class: "img-fluid") %>
-						<div class="team-info mt-4">
-							<h3 class="mb-2"><span class="sub-tittle-team">Chef 01</span> Marian Dupre</h3>
-							<p>Donec consequat sapien ut leo cursus rhoncus</p>
-							<ul class="social_section_1info list-unstyled pt-2 mt-4">
-								<li class="d-inline facebook">
-									<a href="#"><span class="fa fa-facebook mr-1"></span>facebook</a>
-								</li>
-								<li class="d-inline twitter">
-									<a href="#"><span class="fa fa-twitter mr-1"></span>twitter</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 mt-lg-0 mt-5">
-					<div class="team-gd">
-						<%= image_tag("t2.jpg", :alt => "user-image", class: "img-fluid") %>
-						<div class="team-info mt-4">
-							<h3 class="mb-2"><span class="sub-tittle-team">Chef 02</span> Judy Crouse</h3>
-							<p>Donec consequat sapien ut leo cursus rhoncus</p>
-							<ul class="social_section_1info list-unstyled pt-2 mt-4">
-								<li class="d-inline google">
-									<a href="#"><span class="fa fa-google-plus mr-1"></span>google</a>
-								</li>
-								<li class="d-inline linkedin">
-									<a href="#"><span class="fa fa-linkedin mr-1"></span>linkedin</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 mt-lg-0 mt-5">
-					<div class="team-gd">
-						<%= image_tag("t3.jpg", :alt => "user-image", class: "img-fluid") %>
-						<div class="team-info mt-4">
-							<h3 class="mb-2"><span class="sub-tittle-team">Chef 03</span> Ruth Chase</h3>
-							<p>Donec consequat sapien ut leo cursus rhoncus</p>
-							<ul class="social_section_1info list-unstyled pt-2 mt-4">
-								<li class="d-inline facebook">
-									<a href="#"><span class="fa fa-facebook mr-1"></span>facebook</a>
-								</li>
-								<li class="d-inline twitter">
-									<a href="#"><span class="fa fa-twitter mr-1"></span>twitter</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- //team -->
-
-	<!-- blog -->
 	<section class="blog py-5" id="blog">
 		<div class="container py-xl-5 py-lg-3">
 			<h3 class="title-w3ls text-center text-bl mb-5">Todas nuestras recetas</h3>
@@ -175,13 +72,17 @@
 					    </div>
 					  </div>
 					</div>
+
     			<% end %>
     	        <div class="row">
-        			<%= paginate @recetas %>
+
       			</div>
 			</div>
+			<br>
+				<div class="col-lg-7 ">
+        			<%= paginate @recetas %>
+				</div>
 		</div>
 	</section>
-	<!-- //blog -->
 <%= render :partial => 'partials/footer' %>
 </div>

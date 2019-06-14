@@ -1,10 +1,3 @@
-/*--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
-/* Reset Code */
 body {
     padding: 0;
     margin: 0;
@@ -19,8 +12,7 @@ body {
     background: url(tablas.jpg)repeat;
 }
 .topinder{
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f3f3f3+34,f0f0f0+54,f6f6f6+67,fefefe+100 */
-    background: #f3f3f3; /* Old browsers */
+    background: #f3f3f3;
     background: -moz-linear-gradient(top, #f3f3f3 34%, #f0f0f0 54%, #f6f6f6 67%, #fefefe 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(top, #f3f3f3 34%,#f0f0f0 54%,#f6f6f6 67%,#fefefe 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom, #f3f3f3 34%,#f0f0f0 54%,#f6f6f6 67%,#fefefe 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -91,9 +83,6 @@ ol {
     padding: 0;
 }
 
-/* //Reset Code */
-
-/* colors code */
 .text-bl {
     color: #343a40;
 }
@@ -126,9 +115,6 @@ ol {
     letter-spacing: 1px;
 }
 
-/* //colors code */
-
-/* bottom-to-top */
 a.move-top {
     position: absolute;
     top: 16px;
@@ -139,16 +125,10 @@ a.move-top span {
     color: #fff;
     font-size: 30px;
 }
-
-/* //bottom-to-top */
-
-/* header */
-/* top bar */
-.header-top_w3layouts {
+.header-top_wl {
     padding: 0 .5em;
 }
 
-/* social icons */
 .par-so {
     font-size: 14px;
 }
@@ -195,60 +175,29 @@ a.move-top span {
     display: inline-block;
 }
 
-/* //social icons */
-.header-top_w3layouts p,
-.header-w3layouts p,
-.top-w3layouts p {
+.header-top_wl p,
+.header-wl p,
+.top-wl p {
     font-size: 14px;
 }
 
-.top-w3layouts p a:hover,
+.top-wl p a:hover,
 .w3l-footer ul li a:hover {
     opacity: .7;
 }
 
-/* search */
-.search-w3layouts input[type="search"] {
-    outline: none;
-    padding: 10px 15px;
-    color: #000;
-    font-size: 13px;
-    border: none;
-    letter-spacing: 1px;
-    background: #fff;
-}
 
-.search-w3layouts button {
-    background: #000;
-    color: #fff;
-    border: none;
-    font-size: 14px;
-    padding: 9px 15px;
-    -webkit-border-radius: 0;
-    -o-border-radius: 0;
-    -moz-border-radius: 0;
-    -ms-border-radius: 0;
-    border-radius: 0;
-}
 
-/* //search */
-
-/* //top bar */
-/* header 2 */
-/* navigation */
 div#home {
     position: relative;
 }
 
-/* navigation */
-/* CSS Document */
 .toggle-2,
 .toggle,
 [id^=drop] {
     display: none;
 }
 
-/* Giving a background-color to the nav container. */
 nav {
     margin: 0;
     padding: 0;
@@ -264,8 +213,6 @@ nav {
 }
 
 
-/* Since we'll have the "ul li" "float:left"
- * we need to add a clear after the container. */
 
 nav:after {
     content: "";
@@ -273,8 +220,6 @@ nav:after {
     clear: both;
 }
 
-/* Removing padding, margin and "list-style" from the "ul",
- * and adding "position:reltive" */
 nav ul {
     float: right;
     padding: 0;
@@ -283,14 +228,12 @@ nav ul {
     position: relative;
 }
 
-/* Positioning the navigation items inline */
 nav ul li {
     margin: 0px;
     display: inline-block;
     float: left;
 }
 
-/* Styling the links */
 nav a {
     margin: 0 12px;
     color: #000;
@@ -304,10 +247,7 @@ nav a:hover {
     color: #000;
 }
 
-/* Background color change on Hover */
 
-/* Hide Dropdowns by Default
- * and giving it a position of absolute */
 nav ul ul {
     display: none;
     position: absolute;
@@ -323,12 +263,10 @@ nav ul ul {
     border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-/* Display Dropdowns on Hover */
 nav ul li:hover>ul {
     display: inherit;
 }
 
-/* Fisrt Tier Dropdown */
 nav ul ul li {
     width: 170px;
     float: none;
@@ -351,19 +289,13 @@ nav ul ul li a {
     margin: 10px;
 }
 
-/* Second, Third and more Tiers	
- * We move the 2nd and 3rd etc tier dropdowns to the left
- * by the amount of the width of the first tier.
-*/
 nav ul ul ul li {
     position: relative;
     top: -60px;
-    /* has to be the same number as the "width" of "nav ul ul li" */
     left: 170px;
 }
 
 
-/* Change ' +' in order to change the Dropdown symbol */
 li>a:only-child:after {
     content: '';
 }
@@ -377,8 +309,6 @@ a.reqe-button {
     border-radius: 4px;
 }
 
-/* Media Queries
---------------------------------------------- */
 @media all and (max-width : 991px) {
     .nav_w3ls {
         margin-top: 0;
@@ -396,14 +326,11 @@ a.reqe-button {
         margin: 0;
     }
 
-    /* Hide the navigation menu by default */
-    /* Also hide the  */
     .toggle+a,
     .menu {
         display: none;
     }
 
-    /* Stylinf the toggle lable */
     .toggle {
         display: block;
         padding: 8px 14px;
@@ -444,7 +371,6 @@ a.reqe-button {
         opacity: .7;
     }
 
-    /* Display Dropdown when clicked on Parent Lable */
     [id^=drop]:checked+ul {
         display: block;
         background: #fff;
@@ -453,7 +379,6 @@ a.reqe-button {
         width: 100%;
     }
 
-    /* Change menu item's width to 100% */
     nav ul li {
         display: block;
         width: 100%;
@@ -464,21 +389,17 @@ a.reqe-button {
         background-color: transparent;
     }
 
-    /* Hide Dropdowns by Default */
     nav ul ul {
         float: none;
         position: static;
         color: #fff;
-        /* has to be the same number as the "line-height" of "nav a" */
     }
 
-    /* Hide menus on hover */
     nav ul ul li:hover>ul,
     nav ul li:hover>ul {
         display: none;
     }
 
-    /* Fisrt Tier Dropdown */
     nav ul ul li {
         display: block;
         width: 100%;
@@ -487,7 +408,6 @@ a.reqe-button {
 
     nav ul ul ul li {
         position: static;
-        /* has to be the same number as the "width" of "nav ul ul li" */
     }
 
     nav a {
@@ -515,7 +435,6 @@ a.reqe-button {
     }
 }
 
-/*-- dropdown --*/
 #demo {
     margin: 10px 0 0px 0;
 }
@@ -619,9 +538,6 @@ a.reqe-button {
     border-bottom-right-radius: 5px;
 }
 
-/* //dropdown */
-/* //navigation */
-/* logo */
 a.navbar-brand {
     font-size: 34px;
     padding: 0;
@@ -641,9 +557,6 @@ a.navbar-brand span {
     right: 0;
     bottom: 16px;
 }
-
-/* //logo */
-/* dwn button */
 a.login-button-2 {
     letter-spacing: 1px;
     font-size: 14px;
@@ -667,12 +580,6 @@ a.login-button-2 span {
     font-size: 22px;
     vertical-align: middle;
 }
-
-/* // dwn button */
-/* //header 2 */
-
-/* banner */
-/* banner slider */
 .radio {
     display: none;
 }
@@ -711,7 +618,6 @@ a.login-button-2 span {
     right: 0;
 }
 
-/* Move slides overflowed container */
 #slide1:checked~.images .images-inner {
     margin-left: 0;
 }
@@ -724,7 +630,6 @@ a.login-button-2 span {
     margin-left: -200%;
 }
 
-/* Color of bullets */
 #slide1:checked~div .fake-radio .radio-btn:nth-child(1),
 #slide2:checked~div .fake-radio .radio-btn:nth-child(2),
 #slide3:checked~div .fake-radio .radio-btn:nth-child(3) {
@@ -742,12 +647,9 @@ a.login-button-2 span {
     /* background: #fff; */
     /* margin: 0 1px; */
     /* cursor: pointer; */
-	display: none !important;
+    display: none !important;
 }
 
-/* Color of bullets - END */
-
-/* Text of slides */
 #slide1:checked~.labels .label:nth-child(1),
 #slide2:checked~.labels .label:nth-child(2),
 #slide3:checked~.labels .label:nth-child(3) {
@@ -759,9 +661,6 @@ a.login-button-2 span {
     position: absolute;
 }
 
-/* Text of slides - END */
-
-/* Calculate AUTOPLAY for BULLETS */
 @keyframes bullet {
 
     0%,
@@ -786,10 +685,6 @@ a.login-button-2 span {
 #play1:checked~div .fake-radio .radio-btn:nth-child(3) {
     animation: bullet 12300ms infinite 7200ms;
 }
-
-/* Calculate AUTOPLAY for BULLETS - END */
-
-/* Calculate AUTOPLAY for SLIDES */
 @keyframes slide {
 
     0%,
@@ -811,11 +706,6 @@ a.login-button-2 span {
 .st-slider>#play1:checked~.images .images-inner {
     animation: slide 12300ms infinite;
 }
-
-/* Calculate AUTOPLAY for SLIDES - END */
-/* //banner slider */
-
-/* background images for banner */
 .banner-w3ls-1,
 .banner-w3ls-2,
 .banner-w3ls-3 {
@@ -849,11 +739,7 @@ a.login-button-2 span {
     -ms-background-size: cover;
 }
 
-/* //background images for banner */
-/* //banner */
-
-/* banner bottom grids */
-.banner-bottom-w3layouts {
+.banner-bottom-wl {
     margin-top: -4em;
 }
 
@@ -892,19 +778,12 @@ a.login-button-2 span {
 p.card-text {
     font-size: 14px;
 }
-
-/* //banner bottom grids */
-
-/* about */
 .abou-right-w3layuts h3 {
     color: #000;
     letter-spacing: 1px;
     line-height: 1.4;
 }
 
-/* //about */
-
-/* team */
 .teams {
     background: url(bg1.jpg) no-repeat center;
     background-size: cover;
@@ -954,7 +833,6 @@ h3.title-w3ls {
     text-transform: uppercase;
 }
 
-/* team social icons */
 ul.social_section_1info a {
     color: #717580;
     font-size: 13px;
@@ -997,10 +875,6 @@ ul.social_section_1info a:hover {
     opacity: 0.8;
 }
 
-/* //team social icons */
-/* //team */
-
-/* who we are */
 .who-left-w3pvt {
     background: url(bg2.jpg) no-repeat top right;
     background-size: contain;
@@ -1045,8 +919,8 @@ h3.title-w3ls-2 {
     margin-bottom: .5em;
 }
 
-.w3layouts-bgs,
-.w3layouts-bgs-2 {
+.wl-bgs,
+.wl-bgs-2 {
     padding: 0 6em;
 }
 
@@ -1059,7 +933,7 @@ h3.title-w3ls-2 {
     -moz-background-size: contain;
 }
 
-.w3layouts-bgs-2 li {
+.wl-bgs-2 li {
     display: table;
     margin: 10px 0;
 }
@@ -1090,9 +964,6 @@ ul.who-lists li:hover span {
     -ms-transition: 0.5s all;
 }
 
-/* //who we are */
-
-/* blog */
 .blog .card-body {
     padding: 2rem;
 }
@@ -1138,9 +1009,6 @@ h5.blog-title a {
     font-weight: 600;
 }
 
-/* //blog */
-
-/* gallery */
 .gallery-grid1 img {
     -webkit-transition: 0.5s all;
     -moz-transition: 0.5s all;
@@ -1156,7 +1024,6 @@ h5.blog-title a {
     box-shadow: 0 20px 40px -10px rgba(0, 0, 0, .3);
 }
 
-/* popup */
 .pop-overlay {
     position: fixed;
     top: 0px;
@@ -1203,11 +1070,6 @@ h5.blog-title a {
     color: #f0546a;
 }
 
-/* //popup */
-/* //gallery */
-
-/* contact */
-/* contact form */
 .main_grid_contact {
     -webkit-box-shadow: 0px 0px 15.69px 3.31px rgba(204, 204, 223, 0.44);
     -moz-box-shadow: 0px 0px 15.69px 3.31px rgba(204, 204, 223, 0.44);
@@ -1245,8 +1107,6 @@ h5.blog-title a {
     cursor: pointer;
 }
 
-/* //contact form */
-/* map */
 .map {
     padding: 0;
 }
@@ -1257,10 +1117,6 @@ h5.blog-title a {
     min-height: 562px;
 }
 
-/* //map */
-/* //contact */
-
-/* support */
 .support-grid h5,
 .card-title {
     letter-spacing: 1px;
@@ -1285,9 +1141,7 @@ a.btn.button-style-2 {
     font-size: 15px;
 }
 
-/* //support */
 
-/* footer */
 footer {
     background: url(footer.jpg) no-repeat center;
     background-size: cover;
@@ -1297,7 +1151,6 @@ footer {
     -ms-background-size: cover;
 }
 
-/* newsletter */
 .newsletter_right_w3w3pvt-lau {
     background: #fff;
 }
@@ -1346,7 +1199,6 @@ h3.title-w3ls-2 {
     box-shadow: 4px 7px 10px -1px rgba(0, 0, 0, 0.18);
 }
 
-/* //newsletter */
 a.logo {
     font-size: 40px;
     font-weight: 600;
@@ -1375,38 +1227,20 @@ a.logo {
     letter-spacing: 2px;
 }
 
-/* copyright */
-.copy_right p a {
-    color: #fff;
-    font-weight: bold;
-}
 
-.copy_right p a:hover {
-    opacity: .8;
-}
 
-.copy_right p {
-    background: #01060c;
-    letter-spacing: 2px;
-    font-size: 14px;
-}
-
-/* //copyright */
-/* //footer */
-
-/* responsive */
 @media(max-width: 1440px) {
 
-    .w3layouts-bgs,
-    .w3layouts-bgs-2 {
+    .wl-bgs,
+    .wl-bgs-2 {
         padding: 0 4em;
     }
 }
 
 @media(max-width: 1366px) {
 
-    .w3layouts-bgs,
-    .w3layouts-bgs-2 {
+    .wl-bgs,
+    .wl-bgs-2 {
         padding: 0 2em;
     }
 
@@ -1421,8 +1255,8 @@ a.logo {
 
 @media(max-width: 1280px) {
 
-    .w3layouts-bgs,
-    .w3layouts-bgs-2 {
+    .wl-bgs,
+    .wl-bgs-2 {
         padding: 1.5em 2em;
     }
 
@@ -1448,11 +1282,11 @@ a.logo {
         font-size: 13px;
     }
 
-    .w3layouts-bgs {
+    .wl-bgs {
         padding: 4em 5em;
     }
 
-    .w3layouts-bgs-2 {
+    .wl-bgs-2 {
         padding: 1em 5em 8em;
     }
 
@@ -1488,7 +1322,7 @@ a.logo {
 }
 
 @media(max-width: 900px) {
-    .w3layouts-bgs {
+    .wl-bgs {
         padding: 9em 5em 3em;
     }
 
@@ -1498,11 +1332,11 @@ a.logo {
 }
 
 @media(max-width: 768px) {
-    .w3layouts-bgs {
+    .wl-bgs {
         padding: 8em 3em 3em;
     }
 
-    .w3layouts-bgs-2 {
+    .wl-bgs-2 {
         padding: 1em 3em 9em;
     }
 }
@@ -1545,11 +1379,11 @@ a.logo {
         max-width: 400px;
     }
 
-    .banner-bottom-w3layouts {
+    .banner-bottom-wl {
         margin-top: -2em;
     }
 
-    .w3layouts-bgs {
+    .wl-bgs {
         padding: 6em 2em 3em;
     }
 
@@ -1565,7 +1399,7 @@ a.logo {
         font-size: 20px;
     }
 
-    .w3layouts-bgs-2 {
+    .wl-bgs-2 {
         padding: 1em 2em 7em;
     }
 
@@ -1580,13 +1414,13 @@ a.logo {
 
 @media(max-width: 480px) {
 
-    .top-w3layouts,
+    .top-wl,
     .socila-brek {
         flex: 0 0 100%;
         max-width: 100%;
     }
 
-    .top-w3layouts {
+    .top-wl {
         max-width: 300px;
         margin: 0 auto;
     }
@@ -1631,7 +1465,7 @@ a.logo {
 }
 
 @media(max-width: 384px) {
-    .w3layouts-bgs {
+    .wl-bgs {
         padding: 4em 1em 3em;
     }
 
@@ -1647,7 +1481,7 @@ a.logo {
         font-size: 14px;
     }
 
-    .w3layouts-bgs-2 {
+    .wl-bgs-2 {
         padding: 1em 1em 4em;
     }
 
@@ -1678,9 +1512,9 @@ a.logo {
 
 @media(max-width: 320px) {
 
-    .header-top_w3layouts p,
-    .header-w3layouts p,
-    .top-w3layouts p {
+    .header-top_wl p,
+    .header-wl p,
+    .top-wl p {
         font-size: 12.5px;
     }
 
@@ -1745,4 +1579,3 @@ a.logo {
     }
 }
 
-/* //responsive */

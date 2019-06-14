@@ -6,16 +6,13 @@ class RecipesController < ApplicationController
   # GET /recipes.json
   def index
     @recipe = Recipe.new
-    @recipes = current_user.recipes.page(params[:page]).per(3)
+    @recipes = current_user.recipes.page(params[:page]).per(15)
   end
 
   # GET /recipes/1
   # GET /recipes/1.json
   def show
-
-
-@likex = ActiveRecord::Base.connection.execute("SELECT FROM total_likes()")
-
+    @likex = ActiveRecord::Base.connection.execute("SELECT FROM total_likes()")
 
     @likes = @recipe.likes.all.count
     @me_gusta = Like.find_by(recipe_id: @recipe.id, user_id: current_user.id)
