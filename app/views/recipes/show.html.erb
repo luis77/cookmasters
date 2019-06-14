@@ -14,9 +14,7 @@
 
 		<div class="row flex-row-reverse pb-5">
 			<div class="col-lg-6">
-				<%= link_to recipe do %>
-				   <%= image_tag(recipe.foto.url(:recortada), :alt => "Card image cap", class: "card-img-bottom foto") %>
-				<% end %>
+				   <%= image_tag(@recipe.foto.url(:recortada), :alt => "Card image cap", class: "card-img-bottom foto") %>
 			</div>
 			<div class="col-lg-6 abou-right-w3layuts mt-5">
 				<h3 class="mb-4"><%= @recipe.name %></h3>
@@ -31,8 +29,8 @@
 			</div>
 		</div>
 
-		<div class="row flex-row-reverse pb-5">
-			<div class="col-lg-12 abou-right-w3layuts mt-5">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 abou-right-w3layuts mt-5">
 				<h3 class="mb-4">Preparación:</h3>
 				<p style="font-size: 1.1em;"><%= @recipe.body %></p>
 			</div>

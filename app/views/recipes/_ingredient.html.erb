@@ -1,0 +1,9 @@
+
+<div class= "form-group col-md-4 ingredientes_añadidos">
+
+<%= f.text_field :_destroy, as: :hidden, style:"display: none;"%>
+<%= link_to 'Delete','#', class: 'remove_record', style:"display: none;" %>
+
+
+<%= f.text_field :name, label:false, class:"recipe_ingredientes form-control"  %>
+</div>

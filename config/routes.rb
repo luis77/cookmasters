@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :recipes
+  get '/datos_receta', to: 'recipes#datos_receta', as: 'datos_receta'
+
   devise_for :users, controllers: {
     registrations: "users/registrations",
     sessions: "users/sessions",

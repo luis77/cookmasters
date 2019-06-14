@@ -21,6 +21,9 @@
     <%= form.text_area :body %>
   </div>
 
+            <%= form.fields_for :ingredients do |builder| %>
+              <%= render 'ingredient', f:builder%>
+            <%end%>
 
         <div class="field">
           <%= form.label :foto, "Foto:", class: "control-label col-md-2"  %>
@@ -32,5 +35,6 @@
 
   <div class="actions">
     <%= form.submit %>
+
   </div>
 <% end %>

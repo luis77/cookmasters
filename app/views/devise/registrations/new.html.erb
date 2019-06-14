@@ -31,37 +31,37 @@
 
                         <div class="form-row">
                           <div class="form-group col-md-6">
-                            <label for="inputEmail4">password</label>
+                            <label for="inputEmail4">Contraseña</label>
                             <% if @minimum_password_length %>
                             <em>(<%= @minimum_password_length %> caracteres minimo)</em>
                             <% end %><br />
-                            <%= f.password_field :password, :class => "form-control", :placeholder =>"password", autocomplete: "new-password",  :required => "true" %>
+                            <%= f.password_field :password, :class => "form-control", :placeholder =>"Contraseña", autocomplete: "new-password",  :required => "true" %>
                           </div>
                           <div class="form-group col-md-6">
-                            <label for="inputPassword4">password_confirmation</label>
-                            <%= f.password_field :password_confirmation, :class => "form-control", :placeholder =>"password_confirmation", autocomplete: "new-password",  :required => "true" %>
+                            <label for="inputPassword4">Confirmar Contraseña</label>
+                            <%= f.password_field :password_confirmation, :class => "form-control", :placeholder =>"Confirmar contraseña", autocomplete: "new-password",  :required => "true" %>
                           </div>
                         </div>
 
                         <div class="form-row">
                           <div class="form-group col-md-6">
-                            <label for="inputEmail4">email</label>
+                            <label for="inputEmail4">Correo</label>
                             <%= f.email_field :email, :class => "form-control", :placeholder =>"email", autocomplete: "email",  :required => "true"  %>
                           </div>
                           <div class="form-group col-md-6">
-                            <label for="inputPassword4">username</label>
+                            <label for="inputPassword4">Nombre Usuario</label>
                             <%= f.text_field :username, :class => "form-control", :placeholder =>"username",  :required => "true"  %>
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label for="inputAddress2">bio</label>
+                          <label for="inputAddress2">Biografía</label>
                           <%= f.text_area :bio, :class => "form-control", :placeholder =>"bio",  :required => "true"  %>
                         </div>
                         
                       </div>
 
-                        <%= f.submit "registrarse", :class => "btn btn-default submit col-md-12"%>
+                        <%= f.submit "Registrarse", :class => "btn btn-default submit col-md-12"%>
                   </section>
                 </div>
               </div>
@@ -82,8 +82,7 @@
       <div class="w3layouts-bgs-2 align-self-center mb-xl-5 pb-xl-5">
         <h3 class="title-w3ls-2 mt-1 mb-xl-5 mb-4">Registrate de forma gratuita</h3>
         <p class="mb-4 sub-para-wthree">Registrate en nuestra web para que puedas comprartir recetas</p>
-        <p>Podrás darte a conocer mediante ellas, formando parte de los mejores chefs, otros usuarios podrán aprender de ellas y mantener la comunidad activa.</p>
-      </div>
+        </div>
     </div>
   </div>
 </section>

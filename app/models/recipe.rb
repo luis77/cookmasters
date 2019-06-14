@@ -3,6 +3,9 @@ class Recipe < ApplicationRecord
   validates_attachment_content_type :foto, content_type: /\Aimage\/.*\z/
   belongs_to :user
   has_many :ingredients, dependent: :destroy
+  accepts_nested_attributes_for :ingredients, allow_destroy: true, reject_if: proc{ |att| att['name'].blank?}
+
+
   has_many :likes, dependent: :destroy
 
 
@@ -13,6 +16,10 @@ class Recipe < ApplicationRecord
 			  .group(:name, :id,:created_at,:foto_file_name)
 			  .order("cantidad_likes Desc")
    end
+
+
+
+
 
 
 end

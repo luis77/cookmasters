@@ -7,7 +7,6 @@ class RecipesController < ApplicationController
   def index
     @recipe = Recipe.new
     @recipes = current_user.recipes.page(params[:page]).per(3)
-
   end
 
   # GET /recipes/1
@@ -50,6 +49,14 @@ class RecipesController < ApplicationController
     end
   end
 
+  def datos_receta
+    @recipe_edit = Recipe.find_by(id: params[:recipe])
+    @recipe_edit.ingredients.build
+
+    respond_to do |format|
+      format.js #para que se puedan enviar los datos de la busqueda del @search de la gema
+    end
+  end
 
   # GET /recipes/new
   def new
@@ -58,6 +65,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1/edit
   def edit
+    @recipe.ingredients.build
   end
 
   # POST /recipes
@@ -118,6 +126,6 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:name, :body, :foto)
+      params.require(:recipe).permit(:name, :body, :foto, ingredients_attributes: Ingredient.attribute_names.map(&:to_sym).push(:_destroy))
     end
 end
