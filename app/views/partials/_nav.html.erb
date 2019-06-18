@@ -4,7 +4,7 @@
     <!-- logo -->
     <h1 class="logo-style-res float-left">
 
-      <%= link_to image_tag("logo.png", class: "img-fluid logo-img mt-1",style:"width: 50px;"), root_path  %> CookMasters
+      <%= link_to image_tag("logo.png", class: "img-fluid logo-img mt-1",style:"width: 50px;"), root_path  %> <%= link_to "CookMasters", root_path, class: "active", style:"color:rgb(168, 23, 29);" %>
     </h1>
     <!-- //logo -->
     <!-- nav -->
@@ -13,7 +13,7 @@
         <label for="drop" class="toggle">Menu</label>
         <input type="checkbox" id="drop" />
         <ul class="menu mx-lg-auto">
-          <li><%= link_to "Home", root_path, class: "active" %></li>
+          <li><%= link_to "Inicio", root_path, class: "active" %></li>
           <% if user_signed_in? %>
             <li><%= link_to "Mis recetas", recipes_path %></li>
             <li><%= link_to '<i class="fa fa-sign-out pull-right"></i> Cerrar sesión'.html_safe, destroy_user_session_path, method: :delete%></li>

@@ -52,7 +52,7 @@ module Api
 			private
 
 			def recipe_params
-				params.permit(:name, :body)	
+				params.permit(:name, :body, :user_id)	
 			end
 		end
 	end

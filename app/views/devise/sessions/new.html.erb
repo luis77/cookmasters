@@ -1,53 +1,41 @@
 <section class="w3ls-bnrbtm py-12" id="what">
     <div class="row no-gutters">
-
       <div class="col-xl-12 who-left-w3pvt d-flex">
         <div class="wl-bgs align-self-center mt-xl-5" style="margin-left: 34%;">
           <div class="d-flex services-box mt-5"></div>
           <div class="d-flex services-box mt-5">
-
             <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-horizontal"}) do |f| %>
               <div id="wrapper">
                 <div id="login" class="animate form">
                   <section class="login_content">
                       <h1>Acceso</h1>
-
                       <div class="forml">
-
                         <div class="form-group">
                           <div>
                             <%= f.text_field :login, autofocus: true, :class => "form-control", :placeholder =>"Email o nombre de usuario",  :required => ""  %>
                           </div>
                         </div>
-
                         <div class="form-group">
                           <div>
                             <%= f.password_field :password, autofocus: true, :class => "form-control", :placeholder =>"Contraseña",  :required => ""  %>
                           </div>
-                          
                         </div>
-
                       </div>
                       <div class="form-group">
-                          <% if devise_mapping.rememberable? -%>
-                              <div class="checkbox-inline col-md-5">
-                                <%= f.check_box :remember_me %>
-                                <%= f.label :remember_me %>
-                              </div>
-                          <% end -%>
+                        <% if devise_mapping.rememberable? -%>
+                            <div class="checkbox-inline col-md-12">
+                              <%= f.check_box :remember_me %>
+                              <%= f.label :remember_me,"Recuerdame" %>
+                            </div>
+                        <% end -%>
                       </div>
-                        <%= f.submit "Entrar", :class => "btn btn-default submit col-md-12"%>
-
+                      <%= f.submit "Entrar", :class => "btn btn-default submit col-md-12"%>
                   </section>
-                      
+                </div>
               </div>
-            </div>
-
               <%= render "devise/shared/links" %>
             <% end %>
-            
           </div>
-
         </div>
       </div>
     </div>
