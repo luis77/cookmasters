@@ -1,9 +1,23 @@
-
-<div class= "form-group col-md-4 ingredientes_añadidos">
-
-<%= f.text_field :_destroy, as: :hidden, style:"display: none;"%>
-<%= link_to 'Delete','#', class: 'remove_record', style:"display: none;" %>
+<div class= "form-group col-md-4 ingredientes_añadidos" id="ingrediente_<%=f.object.id%>">
 
 
-<%= f.text_field :name, label:false, class:"recipe_ingredientes form-control"  %>
+  <div class="input-group mb-2">
+    <div class="input-group-prepend">
+    	<div class="input-group-text">
+    	<% if f.object.id !=nil %>
+				<%= link_to '', eliminar_ingrediente_path(:id => f.object.id, :index => f.index), class: "fa fa-trash", remote:true, data: {confirm: "¿Está seguro que desea eliminarlo?"}, style:"color: rgb(144, 142, 142);" %>
+		<%end%>
+			</div>
+    </div>
+
+
+
+    <%= f.text_field :name, label:false, class:"recipe_ingredientes form-control", placeholder:"Ingrediente"  %>
+  </div>
+
+
 </div>
+
+
+
+

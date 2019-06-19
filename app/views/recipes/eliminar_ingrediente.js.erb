@@ -1,0 +1,9 @@
+$("#ingrediente_<%= @ingredient.id %>").remove();
+$("#recipe_ingredients_attributes_<%= @index %>_id").remove();
+$("#notice").html("<%= escape_javascript(render :partial => 'partials/flash' , :locals => { :flash => flash }).html_safe %>");
+
+setTimeout(function(){
+  $('#notice').fadeIn("slow", function() {
+    $(this).create();
+  })
+}, 1500);

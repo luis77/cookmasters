@@ -93,6 +93,13 @@ class RecipesController < ApplicationController
   def update
     respond_to do |format|
       if @recipe.update(recipe_params)
+
+        if params[:lista].present?
+          params[:lista].each do |(c,ingrediente)|
+            Ingredient.create(name: ingrediente, recipe_id:@recipe.id) if ingrediente != ""
+          end
+        end
+
         format.html { redirect_to @recipe, notice: 'Recipe was successfully updated.' }
         format.json { render :show, status: :ok, location: @recipe }
         format.js {flash.now[:notice] = 'La receta se ha actualizado de forma exitosa.'} 
@@ -112,6 +119,15 @@ class RecipesController < ApplicationController
       format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
       format.json { head :no_content }
       format.js {flash.now[:notice] = 'La receta se ha eliminado de forma exitosa.'} #ajax
+    end
+  end
+
+  def eliminar_ingrediente
+    @ingredient = Ingredient.find_by_id(params[:id])
+    @ingredient.destroy
+    @index = params[:index] #para eliminar el ingrediente del formulario
+    respond_to do |format|
+      format.js 
     end
   end
 

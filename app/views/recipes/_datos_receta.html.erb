@@ -20,25 +20,20 @@
 
           <div class="form-group">
             <div class="col-md-12">
-              <button type="button" class="btn btn-success btn-xs" onclick="miIngrediente()">
+              <button type="button" class="btn btn-success btn-xs" onclick="miIngredienteEdit()">
                Añadir ingrediente
               </button>
             </div>
           </div>
 
-
-
-         <div id="ingredientes" class="form-row">
-
-            <%= f.fields_for :ingredients do |builder| %>
-              <%= render 'ingredient', f:builder%>
-            <%end%>
-
-         </div>
-
+           <div id="ingredientes" class="form-row">
+              <%= f.fields_for :ingredients do |builder| %>
+                <%= render 'ingredient', f:builder%>
+              <%end%>
+           </div>
 
           <%= fields_for :lista do |ff|%>
-           <div id="ingredientes" class="form-row">
+           <div id="ingredientes_edit" class="form-row">
 
            </div>
           <% end %>

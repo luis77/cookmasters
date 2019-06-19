@@ -1,36 +1,22 @@
 <style type="text/css">
   .mt-5, .my-5 {
-
     margin-top: 1rem !important;
+  }
 
-}
-
-
-</style>
-
-<style type="text/css">
   .containerx {
       background-color: #ffffffed;
       margin-top: 0%;
       padding-top: 5% !important;
       padding-left: 2%;
       min-height: 50rem;
-
-
-
-
-overflow: hidden;
+      overflow: hidden;
   }
 
   .receta {
     min-height: 100%;
     position: absolute;
     width: 100%;
-
-
-
-overflow: hidden;
-
+    overflow: hidden;
   }
 </style>
 
@@ -130,8 +116,21 @@ overflow: hidden;
         x.setAttribute("name", `lista[ingrediente_${orden}]`);
         x.setAttribute("class", "recipe_ingredientes form-control");
         x.setAttribute("id", `ingrediente_${orden}`);
-        x.setAttribute("placeholder", `ingrediente ${orden}`);
+        x.setAttribute("placeholder", `Ingrediente`);
         document.getElementById('ingredientes').appendChild(y).appendChild(x);
+      }
+
+      function miIngredienteEdit() {
+        orden=orden+1;
+        var y = document.createElement("DIV");
+        y.setAttribute("class", "form-group col-md-4 ingredientes_añadidos");
+        var x = document.createElement("INPUT");
+        x.setAttribute("type", "text");
+        x.setAttribute("name", `lista[ingrediente_${orden}]`);
+        x.setAttribute("class", "recipe_ingredientes form-control");
+        x.setAttribute("id", `ingrediente_${orden}`);
+        x.setAttribute("placeholder", `Ingrediente`);
+        document.getElementById('ingredientes_edit').appendChild(y).appendChild(x);
       }
     </script>
 
